@@ -1,2 +1,0 @@
-id	user_id	target_id	type
-26	1	6	11
