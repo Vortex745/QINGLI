@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "关注/粉丝",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "usingComponents": {}
+}

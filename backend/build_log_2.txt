@@ -1,0 +1,636 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.jin:xianqu_backend >-----------------------
+[INFO] Building xianqu_backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ xianqu_backend ---
+[INFO] Deleting E:\testJava\xianqu_taro\xianqu_backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ xianqu_backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ xianqu_backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 68 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/GoodsService.java:[14,10] 找不到符号
+  符号:   类 GoodsVO
+  位置: 接口 com.jin.xianqu_backend.service.GoodsService
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/GoodsService.java:[16,10] 找不到符号
+  符号:   类 GoodsVO
+  位置: 接口 com.jin.xianqu_backend.service.GoodsService
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/controller/GoodsController.java:[40,48] 找不到符号
+  符号:   类 Valid
+  位置: 类 com.jin.xianqu_backend.controller.GoodsController
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/aspect/LogAspect.java:[50,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.jin.xianqu_backend.aspect.LogAspect
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/aspect/LogAspect.java:[56,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.jin.xianqu_backend.aspect.LogAspect
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[21,15] 找不到符号
+  符号:   方法 setCode(int)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[22,15] 找不到符号
+  符号:   方法 setMsg(java.lang.String)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[23,15] 找不到符号
+  符号:   方法 setData(T)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[29,15] 找不到符号
+  符号:   方法 setCode(int)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[30,15] 找不到符号
+  符号:   方法 setMsg(java.lang.String)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[36,15] 找不到符号
+  符号:   方法 setCode(int)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[37,15] 找不到符号
+  符号:   方法 setMsg(java.lang.String)
+  位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/exception/GlobalExceptionHandler.java:[17,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.jin.xianqu_backend.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/exception/GlobalExceptionHandler.java:[23,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.jin.xianqu_backend.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[37,25] 找不到符号
+  符号:   方法 getLatitude()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 area
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[37,59] 找不到符号
+  符号:   方法 getLongitude()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 area
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[56,17] 找不到符号
+  符号:   方法 setId(java.lang.Long)
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[57,44] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[61,27] 找不到符号
+  符号:   方法 builder()
+  位置: 类 com.jin.xianqu_backend.model.vo.AreaMatchVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[62,30] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[63,32] 找不到符号
+  符号:   方法 getName()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[64,32] 找不到符号
+  符号:   方法 getType()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[40,16] 找不到符号
+  符号:   方法 setUserId(java.lang.Long)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[41,16] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[57,54] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[58,37] 找不到符号
+  符号:   方法 builder()
+  位置: 类 com.jin.xianqu_backend.model.vo.CommentVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[59,32] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[60,36] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[61,37] 找不到符号
+  符号:   方法 getContent()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[62,40] 找不到符号
+  符号:   方法 getCreateTime()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[65,36] 找不到符号
+  符号:   方法 getNickname()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[66,37] 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[68,46] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[45,55] 找不到符号
+  符号:   方法 getTargetId()
+  位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[46,50] 找不到符号
+  符号:   方法 getType()
+  位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[51,37] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 favorite
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[56,21] 找不到符号
+  符号:   方法 setUserId(java.lang.Long)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 favorite
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[57,51] 找不到符号
+  符号:   方法 getTargetId()
+  位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[58,47] 找不到符号
+  符号:   方法 getType()
+  位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[59,21] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 favorite
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[96,53] 找不到符号
+  符号:   方法 getTargetId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 fav
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[100,33] 找不到符号
+  符号:   方法 builder()
+  位置: 类 com.jin.xianqu_backend.model.vo.GoodsVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[101,30] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[102,34] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[103,34] 找不到符号
+  符号:   方法 getAreaId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[104,32] 找不到符号
+  符号:   方法 getName()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[105,39] 找不到符号
+  符号:   方法 getDescription()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[106,33] 找不到符号
+  符号:   方法 getPrice()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[107,36] 找不到符号
+  符号:   方法 getImageUrl()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[108,34] 找不到符号
+  符号:   方法 getStatus()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[109,38] 找不到符号
+  符号:   方法 getCreateTime()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[114,54] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[116,40] 找不到符号
+  符号:   方法 getNickname()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[117,42] 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[71,33] 找不到符号
+  符号:   方法 builder()
+  位置: 类 com.jin.xianqu_backend.model.vo.GoodsVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[72,30] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[73,34] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[74,34] 找不到符号
+  符号:   方法 getAreaId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[75,32] 找不到符号
+  符号:   方法 getName()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[76,39] 找不到符号
+  符号:   方法 getDescription()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[77,33] 找不到符号
+  符号:   方法 getPrice()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[78,36] 找不到符号
+  符号:   方法 getImageUrl()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[79,34] 找不到符号
+  符号:   方法 getStatus()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[80,38] 找不到符号
+  符号:   方法 getCreateTime()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[84,54] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[86,40] 找不到符号
+  符号:   方法 getNickname()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[87,42] 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[94,47] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[96,19] 找不到符号
+  符号:   方法 setFavorite(boolean)
+  位置: 类型为com.jin.xianqu_backend.model.vo.GoodsVO的变量 vo
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[98,19] 找不到符号
+  符号:   方法 setFavorite(boolean)
+  位置: 类型为com.jin.xianqu_backend.model.vo.GoodsVO的变量 vo
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[117,33] 找不到符号
+  符号:   方法 getCurrentAreaId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[122,14] 找不到符号
+  符号:   方法 setUserId(java.lang.Long)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[123,29] 找不到符号
+  符号:   方法 getCurrentAreaId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[124,14] 找不到符号
+  符号:   方法 setStatus(int)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[125,14] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[126,14] 找不到符号
+  符号:   方法 setUpdateTime(java.util.Date)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[131,21] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[137,53] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.dto.GoodsUpdateDTO的变量 goodsUpdateDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[141,22] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 oldGoods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[146,14] 找不到符号
+  符号:   方法 setUpdateTime(java.util.Date)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[158,19] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[40,35] 找不到符号
+  符号:   方法 getGoodsId()
+  位置: 类型为com.jin.xianqu_backend.model.dto.OrderAddDTO的变量 orderAddDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[46,18] 找不到符号
+  符号:   方法 getStatus()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[49,18] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[54,14] 找不到符号
+  符号:   方法 setStatus(int)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[59,14] 找不到符号
+  符号:   方法 setBuyerId(java.lang.Long)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[60,32] 找不到符号
+  符号:   方法 getUserId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[61,14] 找不到符号
+  符号:   方法 setGoodsId(java.lang.Long)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[62,30] 找不到符号
+  符号:   方法 getPrice()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[63,14] 找不到符号
+  符号:   方法 setStatus(int)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[64,14] 找不到符号
+  符号:   方法 setCreateTime(java.util.Date)
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[68,21] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[88,55] 找不到符号
+  符号:   方法 getGoodsId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[89,27] 找不到符号
+  符号:   方法 builder()
+  位置: 类 com.jin.xianqu_backend.model.vo.OrderVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[90,30] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[91,35] 找不到符号
+  符号:   方法 getGoodsId()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[92,53] 找不到符号
+  符号:   方法 getName()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[93,54] 找不到符号
+  符号:   方法 getImageUrl()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[94,34] 找不到符号
+  符号:   方法 getAmount()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[95,34] 找不到符号
+  符号:   方法 getStatus()
+  位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.419 s
+[INFO] Finished at: 2026-01-11T17:34:08+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project xianqu_backend: Compilation failure: Compilation failure: 
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/GoodsService.java:[14,10] 找不到符号
+[ERROR]   符号:   类 GoodsVO
+[ERROR]   位置: 接口 com.jin.xianqu_backend.service.GoodsService
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/GoodsService.java:[16,10] 找不到符号
+[ERROR]   符号:   类 GoodsVO
+[ERROR]   位置: 接口 com.jin.xianqu_backend.service.GoodsService
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/controller/GoodsController.java:[40,48] 找不到符号
+[ERROR]   符号:   类 Valid
+[ERROR]   位置: 类 com.jin.xianqu_backend.controller.GoodsController
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/aspect/LogAspect.java:[50,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.jin.xianqu_backend.aspect.LogAspect
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/aspect/LogAspect.java:[56,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.jin.xianqu_backend.aspect.LogAspect
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[21,15] 找不到符号
+[ERROR]   符号:   方法 setCode(int)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[22,15] 找不到符号
+[ERROR]   符号:   方法 setMsg(java.lang.String)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[23,15] 找不到符号
+[ERROR]   符号:   方法 setData(T)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[29,15] 找不到符号
+[ERROR]   符号:   方法 setCode(int)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[30,15] 找不到符号
+[ERROR]   符号:   方法 setMsg(java.lang.String)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[36,15] 找不到符号
+[ERROR]   符号:   方法 setCode(int)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/common/Result.java:[37,15] 找不到符号
+[ERROR]   符号:   方法 setMsg(java.lang.String)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/exception/GlobalExceptionHandler.java:[17,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.jin.xianqu_backend.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/exception/GlobalExceptionHandler.java:[23,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.jin.xianqu_backend.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[37,25] 找不到符号
+[ERROR]   符号:   方法 getLatitude()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 area
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[37,59] 找不到符号
+[ERROR]   符号:   方法 getLongitude()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 area
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[56,17] 找不到符号
+[ERROR]   符号:   方法 setId(java.lang.Long)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[57,44] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[61,27] 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 com.jin.xianqu_backend.model.vo.AreaMatchVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[62,30] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[63,32] 找不到符号
+[ERROR]   符号:   方法 getName()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/AreaServiceImpl.java:[64,32] 找不到符号
+[ERROR]   符号:   方法 getType()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Area的变量 bestMatch
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[40,16] 找不到符号
+[ERROR]   符号:   方法 setUserId(java.lang.Long)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[41,16] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[57,54] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[58,37] 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 com.jin.xianqu_backend.model.vo.CommentVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[59,32] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[60,36] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[61,37] 找不到符号
+[ERROR]   符号:   方法 getContent()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[62,40] 找不到符号
+[ERROR]   符号:   方法 getCreateTime()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[65,36] 找不到符号
+[ERROR]   符号:   方法 getNickname()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[66,37] 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/CommentServiceImpl.java:[68,46] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Comment的变量 comment
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[45,55] 找不到符号
+[ERROR]   符号:   方法 getTargetId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[46,50] 找不到符号
+[ERROR]   符号:   方法 getType()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[51,37] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 favorite
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[56,21] 找不到符号
+[ERROR]   符号:   方法 setUserId(java.lang.Long)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 favorite
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[57,51] 找不到符号
+[ERROR]   符号:   方法 getTargetId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[58,47] 找不到符号
+[ERROR]   符号:   方法 getType()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.dto.FavoriteToggleDTO的变量 favoriteToggleDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[59,21] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 favorite
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[96,53] 找不到符号
+[ERROR]   符号:   方法 getTargetId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Favorite的变量 fav
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[100,33] 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 com.jin.xianqu_backend.model.vo.GoodsVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[101,30] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[102,34] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[103,34] 找不到符号
+[ERROR]   符号:   方法 getAreaId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[104,32] 找不到符号
+[ERROR]   符号:   方法 getName()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[105,39] 找不到符号
+[ERROR]   符号:   方法 getDescription()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[106,33] 找不到符号
+[ERROR]   符号:   方法 getPrice()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[107,36] 找不到符号
+[ERROR]   符号:   方法 getImageUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[108,34] 找不到符号
+[ERROR]   符号:   方法 getStatus()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[109,38] 找不到符号
+[ERROR]   符号:   方法 getCreateTime()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[114,54] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[116,40] 找不到符号
+[ERROR]   符号:   方法 getNickname()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/FavoriteServiceImpl.java:[117,42] 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[71,33] 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 com.jin.xianqu_backend.model.vo.GoodsVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[72,30] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[73,34] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[74,34] 找不到符号
+[ERROR]   符号:   方法 getAreaId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[75,32] 找不到符号
+[ERROR]   符号:   方法 getName()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[76,39] 找不到符号
+[ERROR]   符号:   方法 getDescription()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[77,33] 找不到符号
+[ERROR]   符号:   方法 getPrice()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[78,36] 找不到符号
+[ERROR]   符号:   方法 getImageUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[79,34] 找不到符号
+[ERROR]   符号:   方法 getStatus()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[80,38] 找不到符号
+[ERROR]   符号:   方法 getCreateTime()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[84,54] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[86,40] 找不到符号
+[ERROR]   符号:   方法 getNickname()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[87,42] 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 seller
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[94,47] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[96,19] 找不到符号
+[ERROR]   符号:   方法 setFavorite(boolean)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.vo.GoodsVO的变量 vo
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[98,19] 找不到符号
+[ERROR]   符号:   方法 setFavorite(boolean)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.vo.GoodsVO的变量 vo
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[117,33] 找不到符号
+[ERROR]   符号:   方法 getCurrentAreaId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[122,14] 找不到符号
+[ERROR]   符号:   方法 setUserId(java.lang.Long)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[123,29] 找不到符号
+[ERROR]   符号:   方法 getCurrentAreaId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[124,14] 找不到符号
+[ERROR]   符号:   方法 setStatus(int)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[125,14] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[126,14] 找不到符号
+[ERROR]   符号:   方法 setUpdateTime(java.util.Date)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[131,21] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[137,53] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.dto.GoodsUpdateDTO的变量 goodsUpdateDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[141,22] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 oldGoods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[146,14] 找不到符号
+[ERROR]   符号:   方法 setUpdateTime(java.util.Date)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/GoodsServiceImpl.java:[158,19] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[40,35] 找不到符号
+[ERROR]   符号:   方法 getGoodsId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.dto.OrderAddDTO的变量 orderAddDTO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[46,18] 找不到符号
+[ERROR]   符号:   方法 getStatus()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[49,18] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[54,14] 找不到符号
+[ERROR]   符号:   方法 setStatus(int)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[59,14] 找不到符号
+[ERROR]   符号:   方法 setBuyerId(java.lang.Long)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[60,32] 找不到符号
+[ERROR]   符号:   方法 getUserId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[61,14] 找不到符号
+[ERROR]   符号:   方法 setGoodsId(java.lang.Long)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[62,30] 找不到符号
+[ERROR]   符号:   方法 getPrice()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[63,14] 找不到符号
+[ERROR]   符号:   方法 setStatus(int)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[64,14] 找不到符号
+[ERROR]   符号:   方法 setCreateTime(java.util.Date)
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[68,21] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[88,55] 找不到符号
+[ERROR]   符号:   方法 getGoodsId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[89,27] 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 com.jin.xianqu_backend.model.vo.OrderVO
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[90,30] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[91,35] 找不到符号
+[ERROR]   符号:   方法 getGoodsId()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[92,53] 找不到符号
+[ERROR]   符号:   方法 getName()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[93,54] 找不到符号
+[ERROR]   符号:   方法 getImageUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Goods的变量 goods
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[94,34] 找不到符号
+[ERROR]   符号:   方法 getAmount()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] /E:/testJava/xianqu_taro/xianqu_backend/src/main/java/com/jin/xianqu_backend/service/impl/OrderServiceImpl.java:[95,34] 找不到符号
+[ERROR]   符号:   方法 getStatus()
+[ERROR]   位置: 类型为com.jin.xianqu_backend.model.entity.Order的变量 order
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

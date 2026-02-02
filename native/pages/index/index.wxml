@@ -1,0 +1,206 @@
+<view class="page-container">
+    <view style="height: 140rpx;"></view>
+    <!-- Status 1: No Permission -->
+    <view class="status-block" wx:if="{{locationStatus === 1}}">
+        <image src="/assets/images/location.png" class="status-icon" mode="aspectFit"></image>
+        <text class="status-text">未获取到定位信息</text>
+        <button class="status-btn" open-type="openSetting" bindopensetting="onOpenSetting">去授权</button>
+    </view>
+
+    <!-- Status 2: Not in University -->
+    <view class="status-block" wx:if="{{locationStatus === 2}}">
+        <image src="/assets/images/warning.png" class="status-icon" mode="aspectFit"></image>
+        <text class="status-text">请把位置信息定位到高校</text>
+        <button class="status-btn" bindtap="handleManualLocation">选择位置</button>
+    </view>
+
+    <!-- Status 3: Success / Normal Content -->
+    <scroll-view 
+        wx:if="{{locationStatus === 3}}"
+        scroll-y 
+        class="page-scroll" 
+        refresher-enabled="{{true}}"
+        refresher-threshold="{{60}}"
+        refresher-default-style="none"
+        refresher-triggered="{{triggered}}"
+        bindrefresherrefresh="onRefresh"
+        bindscrolltolower="onScrollToLower"
+        bindscroll="onScroll"
+        scroll-top="{{scrollTopValue}}"
+        scroll-with-animation
+    >
+      <!-- Custom Refresher -->
+      <view slot="refresher" class="refresh-container">
+        <image src="/assets/images/Rotate.png" class="refresh-icon {{triggered ? 'rotating' : ''}}"></image>
+      </view>
+    
+      <view class="container">
+        <!-- 1. Header Search (Original Layout) -->
+        <view class="header-search">
+          <view class="location-picker" bindtap="handleLocationClick">
+            <text class="location-text">{{ currentUniversity }}</text>
+            <view class="arrow-down"></view>
+          </view>
+          <view class="search-bar" bindtap="navToSearch">
+            <image class="search-icon" src="/assets/images/search-line.png" mode="aspectFit"></image>
+            <text class="search-hint">搜索</text>
+          </view>
+          <view class="icon-btn" bindtap="navToMessage">
+            <image class="notification-icon" src="/assets/images/notification-3-line.png" mode="aspectFit"></image>
+            <view class="unread-dot" wx:if="{{unreadCount > 0}}"></view>
+          </view>
+        </view>
+    
+        <!-- 2. Quick Actions (Original Layout) -->
+        <view class="quick-actions">
+          <view class="action-item" bindtap="navToSquare" data-type="2">
+            <view class="icon-box">
+              <image class="action-icon" src="/assets/images/briefcase.png" mode="aspectFit"></image>
+            </view>
+            <text class="action-text">兼职发布</text>
+          </view>
+          <view class="action-item" bindtap="navToPublish">
+            <view class="icon-box">
+              <image class="action-icon" src="/assets/images/map-pin.png" mode="aspectFit"></image>
+            </view>
+            <text class="action-text">失物招领</text>
+          </view>
+          <view class="action-item" bindtap="navToSquare" data-type="3">
+            <view class="icon-box">
+              <image class="action-icon" src="/assets/images/seedling.png" mode="aspectFit"></image>
+            </view>
+            <text class="action-text">校园广场</text>
+          </view>
+        </view>
+    
+        <!-- 3. Albums Section (Original Layout) -->
+        <view class="albums-section">
+          <view class="section-header">
+            <text class="section-title">发现好物</text>
+            <view class="header-right">
+              <text class="see-all {{currentSort === 'recommend' ? 'active-tab' : ''}}" bindtap="getRecommendGoods">推荐</text>
+              <text class="divider">|</text>
+              <text class="see-all {{currentSort === 'latest' ? 'active-tab' : ''}}" bindtap="getLatestGoods">最新</text>
+            </view>
+          </view>
+    
+          <!-- Waterfall Grid (Masonry) -->
+          <view class="masonry-grid">
+            <!-- Left Column -->
+            <view class="masonry-column">
+              <block wx:for="{{leftList}}" wx:key="id">
+                <view class="goods-card" bindtap="goDetail" data-id="{{item.id}}">
+                  <view class="card-image">
+                    <image 
+                      class="goods-img" 
+                      src="{{item.fullImageUrl}}" 
+                      mode="widthFix" 
+                      lazy-load 
+                      binderror="handleImgError" 
+                      data-col="left" 
+                      data-index="{{index}}"
+                    ></image>
+                    <view wx:if="{{item.videoUrl}}" class="play-tag">
+                      <image class="play-icon" src="/assets/images/play-fill.png"></image>
+                    </view>
+                  </view>
+                  
+                  <view class="card-content">
+                    <view class="title-wrap">
+                      <text class="card-title">{{item.name || item.title}}</text>
+                    </view>
+    
+                    <view class="price-row">
+                      <view class="price-box">
+                          <text class="currency">¥</text>
+                          <text class="price-int">{{item.price}}</text>
+                      </view>
+                      <view class="seller-row-compact" catchtap="navToProfile" data-id="{{item.userId}}">
+                        <image 
+                          class="seller-avatar" 
+                          src="{{item.fullSellerAvatar}}" 
+                          mode="aspectFill"
+                          lazy-load 
+                          binderror="handleAvatarError"
+                          data-col="left" 
+                          data-index="{{index}}"
+                        ></image>
+                        <text class="seller-name">{{item.sellerName || '青里用户'}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+    
+            <!-- Right Column -->
+            <view class="masonry-column">
+              <block wx:for="{{rightList}}" wx:key="id">
+                <view class="goods-card" bindtap="goDetail" data-id="{{item.id}}">
+                  <view class="card-image">
+                    <image 
+                      class="goods-img" 
+                      src="{{item.fullImageUrl}}" 
+                      mode="widthFix" 
+                      lazy-load 
+                      binderror="handleImgError" 
+                      data-col="right" 
+                      data-index="{{index}}"
+                    ></image>
+                    <view wx:if="{{item.videoUrl}}" class="play-tag">
+                      <image class="play-icon" src="/assets/images/play-fill.png"></image>
+                    </view>
+                  </view>
+                  
+                  <view class="card-content">
+                    <view class="title-wrap">
+                      <text class="card-title">{{item.name || item.title}}</text>
+                    </view>
+    
+                    <view class="price-row">
+                       <view class="price-box">
+                          <text class="currency">¥</text>
+                          <text class="price-int">{{item.price}}</text>
+                       </view>
+                       <view class="seller-row-compact" catchtap="navToProfile" data-id="{{item.userId}}">
+                        <image 
+                          class="seller-avatar" 
+                          src="{{item.fullSellerAvatar}}" 
+                          mode="aspectFill"
+                          lazy-load 
+                          binderror="handleAvatarError"
+                          data-col="right" 
+                          data-index="{{index}}"
+                        ></image>
+                        <text class="seller-name">{{item.sellerName || '青里用户'}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+    
+          <!-- States -->
+          <view class="loading-state" wx:if="{{loading}}">
+            <text>加载中...</text>
+          </view>
+          <view class="no-more" wx:if="{{!hasMore && (leftList.length > 0 || rightList.length > 0)}}">
+            <text>--- 到底啦 ---</text>
+          </view>
+          <view class="empty-state" wx:if="{{leftList.length === 0 && rightList.length === 0 && !loading}}">
+            <image src="/assets/images/internet.png" class="empty-icon" mode="aspectFit"></image>
+            <text class="empty-text">还没有内容，先去逛逛吧</text>
+          </view>
+        </view>
+          
+        <!-- Bottom Safe Area -->
+        <view style="height: 120rpx;"></view>
+      </view>
+    </scroll-view>
+
+    <!-- Back To Top Button -->
+    <view class="back-top {{showBackTop ? 'show' : ''}}" bindtap="scrollToTop">
+      <image src="/assets/images/arrow-bar-up.png" class="back-top-icon" mode="aspectFit"></image>
+    </view>
+</view>

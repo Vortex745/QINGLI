@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="form-group">
+    <view class="form-item avatar-item" bindtap="chooseAvatar">
+      <text class="label">头像</text>
+      <view class="right-content">
+        <image class="avatar" src="{{userInfo.fullAvatarUrl || '/assets/images/avatar_default.png'}}" mode="aspectFill"></image>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-group">
+    <view class="form-item">
+      <text class="label">名称</text>
+      <input class="input" type="nickname" value="{{userInfo.nickname}}" placeholder="请输入昵称" bindinput="onNicknameInput" />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">简介</text>
+      <input class="input" value="{{userInfo.bio}}" placeholder="介绍一下自己吧" bindinput="onBioInput" />
+    </view>
+  </view>
+
+  <view class="form-group">
+    <view class="form-item bg-item" bindtap="chooseBgImage">
+        <view class="label-row">
+            <text class="label">主页背景</text>
+            <text class="hint">点击更换</text>
+        </view>
+        
+        <!-- Show Image if exists -->
+        <image class="bg-preview" src="{{userInfo.fullBgImage}}" mode="aspectFill" wx:if="{{userInfo.fullBgImage}}"></image>
+        
+        <!-- Show Placeholder if no image -->
+        <view class="bg-placeholder" wx:else>
+            <view class="plus-icon">+</view>
+            <text class="placeholder-text">上传背景图</text>
+        </view>
+    </view>
+  </view>
+
+  <view class="footer-btn">
+    <button class="save-btn" bindtap="saveUserInfo">保存</button>
+  </view>
+</view>

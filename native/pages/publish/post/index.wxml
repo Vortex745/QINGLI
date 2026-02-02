@@ -1,0 +1,156 @@
+<view class="page">
+    <!-- Custom Header -->
+    <view class="custom-header-area" style="height: {{headerTotalHeight}}px;">
+        <view class="header-spacer" style="height: {{headerSpacerHeight}}px;"></view>
+        <view class="action-bar">
+            <view class="action-btn cancel" bindtap="goBack">取消</view>
+            <view class="action-btn publish {{publishing ? 'disabled' : ''}}" bindtap="submit">
+                {{ publishing ? '发布中' : '发布' }}
+            </view>
+        </view>
+    </view>
+
+    <scroll-view class="main-content" scroll-y style="padding-top: {{headerTotalHeight}}px;">
+        <!-- Input Area -->
+        <view class="input-container">
+            <!-- Title -->
+            <input class="title-input" 
+                value="{{formData.title}}" 
+                bindinput="onTitleInput" 
+                placeholder="请输入标题 (可选)" 
+                placeholder-class="title-placeholder" />
+            
+            <!-- Content -->
+            <textarea class="content-textarea" 
+                value="{{formData.content}}" 
+                bindinput="onContentInput" 
+                placeholder="分享你的新鲜事..." 
+                placeholder-class="content-placeholder" 
+                maxlength="2000"
+                auto-height="{{true}}"
+                style="min-height: 150rpx;"></textarea>
+
+            <!-- Tags Display -->
+            <view class="tags-display" wx:if="{{tagList.length > 0}}">
+                <view class="tag-chip" wx:for="{{tagList}}" wx:key="index">
+                    #{{item}}
+                </view>
+            </view>
+
+            <!-- Image Grid -->
+            <view class="image-grid">
+                <view class="image-item" wx:for="{{localImages}}" wx:key="index">
+                    <image class="uploaded-img" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}"></image>
+                    <view class="delete-btn" catchtap="deleteImage" data-index="{{index}}">×</view>
+                </view>
+                <view class="upload-btn" bindtap="chooseImage" wx:if="{{localImages.length < 9}}">
+                    <text class="plus-icon">+</text>
+                </view>
+            </view>
+        </view>
+
+        <!-- Options Container -->
+        <view class="options-container">
+             <!-- Category -->
+             <picker range="{{categories}}" bindchange="onCategoryChange">
+                <view class="option-item">
+                    <view class="option-left">
+                        <image class="option-icon" src="/assets/images/home-5-line.png" style="opacity:0.6;"></image> <!-- Fallback icon -->
+                        <text class="option-label">帖子分类</text>
+                    </view>
+                    <view class="option-right">
+                        <text class="option-val {{!formData.category ? 'placeholder' : ''}}">{{ formData.category || '选择分类' }}</text>
+                        <text class="arrow">></text>
+                    </view>
+                </view>
+             </picker>
+
+
+
+             <!-- Add Tag -->
+             <view class="option-item" bindtap="showTagInput">
+                 <view class="option-left">
+                    <text class="option-icon-text">#</text>
+                    <text class="option-label">添加话题</text>
+                </view>
+                <view class="option-right">
+                    <text class="option-val {{tagList.length === 0 ? 'placeholder' : ''}}">
+                        {{ tagList.length > 0 ? '已添加 ' + tagList.length : '添加话题' }}
+                    </text>
+                    <text class="arrow">></text>
+                </view>
+            </view>
+
+            <!-- Anonymous -->
+            <view class="option-item">
+                 <view class="option-left">
+                    <image class="option-icon" src="/assets/images/user-3-line.png" style="opacity:0.6;"></image>
+                    <text class="option-label">匿名发布</text>
+                </view>
+                <switch checked="{{formData.isAnonymous === 1}}" color="#2E5C35" bindchange="onAnonymousChange" style="transform:scale(0.8)"/>
+            </view>
+
+            <!-- Status -->
+            <view class="option-item" wx:if="{{isEditMode}}">
+                 <view class="option-left">
+                    <image class="option-icon" src="/assets/images/user-3-line.png" style="opacity:0.6;"></image>
+                    <text class="option-label">展示动态</text>
+                </view>
+                <switch checked="{{formData.status === 0}}" color="#2E5C35" bindchange="onStatusChange" style="transform:scale(0.8)"/>
+            </view>
+
+        </view>
+
+        <!-- Preview & Tips -->
+        <view class="bottom-area">
+             <view class="tips">请文明发言，禁止发布违规内容</view>
+             <view class="preview-link" bindtap="onPreview">预览效果</view>
+        </view>
+
+        <view style="height: 60rpx;"></view>
+    </scroll-view>
+
+    <!-- Tag Modal -->
+    <view class="modal-mask" wx:if="{{showTagModal}}">
+        <view class="modal-box">
+            <view class="modal-title">添加话题</view>
+            <input class="modal-input" value="{{tempTag}}" bindinput="onTagInput" placeholder="请输入话题标签" focus="{{showTagModal}}" />
+            <view class="modal-btns">
+                <view class="modal-btn cancel" bindtap="closeTagModal">取消</view>
+                <view class="modal-btn confirm" bindtap="confirmTag">确定</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- Preview Modal -->
+    <view class="preview-mask" wx:if="{{showPreview}}" bindtap="closePreview">
+         <view class="preview-container" catchtap="stopProp">
+             <view class="preview-header">
+                 <text>发布预览</text>
+                 <view class="close-preview" bindtap="closePreview">×</view>
+             </view>
+             <scroll-view scroll-y class="preview-content">
+                 <view class="p-header">
+                     <image class="p-avatar" src="{{formData.isAnonymous ? '/assets/images/avatar_default.png' : (userInfo.avatar || '/assets/images/avatar_default.png')}}" mode="aspectFill"></image>
+                     <view class="p-info">
+                         <text class="p-name">{{ formData.isAnonymous ? '某同学' : (userInfo.nickname || '我') }}</text>
+                         <text class="p-time">刚刚</text>
+                     </view>
+                 </view>
+                 <view class="p-body">
+                    <view class="p-title" wx:if="{{formData.title}}">{{ formData.title }}</view>
+                    <text class="p-text" user-select>{{ formData.content }}</text>
+                    <view class="p-tags" wx:if="{{tagList.length > 0}}">
+                        <text wx:for="{{tagList}}" wx:key="index" class="p-tag">#{{item}}</text>
+                    </view>
+                    <view class="p-imgs" wx:if="{{localImages.length}}">
+                        <image wx:for="{{localImages}}" wx:key="index" src="{{item}}" mode="widthFix" class="p-img"></image>
+                    </view>
+                 </view>
+             </scroll-view>
+             <view class="preview-footer">
+                 <view class="pub-btn-full" bindtap="submit">确认发布</view>
+             </view>
+         </view>
+    </view>
+</view>

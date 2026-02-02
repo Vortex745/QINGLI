@@ -1,0 +1,54 @@
+/** app.wxss **/
+
+/* CSS Reset */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  background-color: #F8F9FA;
+  box-sizing: border-box;
+}
+
+view, scroll-view, swiper, button, input, textarea, label, navigator, image {
+  box-sizing: border-box;
+}
+
+/* Global Variables */
+page {
+  --primary-color: #2E5C35;
+  --primary-dark: #1E3F24;
+  --text-main: #333333;
+  --text-sub: #666666;
+  --border-color: #EEEEEE;
+  --bg-color: #F8F9FA;
+  --white: #FFFFFF;
+}
+
+/* Common Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}

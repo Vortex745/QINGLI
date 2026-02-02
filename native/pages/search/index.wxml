@@ -1,0 +1,110 @@
+<!-- pages/search/index.wxml -->
+<view class="container">
+  <!-- Search Header -->
+  <view class="search-header">
+    <view class="search-bar">
+      <image class="search-icon" src="/assets/images/search-line.png"></image>
+      <input 
+        class="search-input" 
+        placeholder="搜索闲置好物、兼职、动态..." 
+        placeholder-style="color: #999;"
+        value="{{keyword}}"
+        bindinput="onInput"
+        bindconfirm="doSearch"
+        focus="{{autoFocus}}"
+        confirm-type="search"
+      />
+      <view class="clear-btn" wx:if="{{keyword}}" bindtap="clearKeyword">
+        <text>×</text>
+      </view>
+    </view>
+    <view class="cancel-btn" bindtap="goBack">取消</view>
+  </view>
+
+  <!-- Search History & Hot -->
+  <view class="suggestion-area" wx:if="{{!hasSearched}}">
+    <!-- History  -->
+    <view class="section" wx:if="{{historyList.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">搜索历史</text>
+        <view class="clear-history" bindtap="clearHistory">
+          <text>清空</text>
+        </view>
+      </view>
+      <view class="tag-list">
+        <view class="tag" wx:for="{{historyList}}" wx:key="*this" bindtap="tapHistory" data-word="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- Hot Search -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">热门搜索</text>
+      </view>
+      <view class="tag-list">
+        <view class="tag hot" wx:for="{{hotList}}" wx:key="*this" bindtap="tapHistory" data-word="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Search Results -->
+  <view class="result-area" wx:if="{{hasSearched}}">
+    <!-- Tabs -->
+    <view class="result-tabs">
+      <view class="tab {{resultTab === 0 ? 'active' : ''}}" bindtap="switchResultTab" data-tab="{{0}}">全部</view>
+      <view class="tab {{resultTab === 1 ? 'active' : ''}}" bindtap="switchResultTab" data-tab="{{1}}">闲置</view>
+      <view class="tab {{resultTab === 2 ? 'active' : ''}}" bindtap="switchResultTab" data-tab="{{2}}">动态</view>
+      <view class="tab {{resultTab === 3 ? 'active' : ''}}" bindtap="switchResultTab" data-tab="{{3}}">兼职</view>
+      <view class="tab {{resultTab === 4 ? 'active' : ''}}" bindtap="switchResultTab" data-tab="{{4}}">失物</view>
+    </view>
+
+    <!-- Filter Bar -->
+    <view class="filter-bar">
+      <view class="filter-item {{currentSort === 'latest' ? 'active' : ''}}" bindtap="switchSort" data-sort="latest">
+        <text>最新</text>
+        <view class="filter-dot" wx:if="{{currentSort === 'latest'}}"></view>
+      </view>
+      <view class="filter-item {{currentSort === 'hot' ? 'active' : ''}}" bindtap="switchSort" data-sort="hot">
+        <text>热度</text>
+        <view class="filter-dot" wx:if="{{currentSort === 'hot'}}"></view>
+      </view>
+    </view>
+
+    <!-- Results List -->
+    <scroll-view scroll-y class="result-scroll" bindscrolltolower="loadMore">
+      <view class="result-list">
+        <block wx:for="{{resultList}}" wx:key="id">
+          <view class="result-card" bindtap="navToDetail" data-item="{{item}}">
+            <image class="result-img" src="{{item.fullImageUrl}}" mode="aspectFill" wx:if="{{item.fullImageUrl}}"></image>
+            <view class="result-info">
+              <view class="result-type-tag type-{{item.dataType}}">{{item.dataTypeName}}</view>
+              <text class="result-title">{{item.title || item.name || item.content || item.itemName}}</text>
+              <text class="result-desc" wx:if="{{item.content && item.dataType !== 'post'}}">{{item.content}}</text>
+              <view class="result-meta">
+                <text class="result-price" wx:if="{{item.price}}">¥{{item.price}}</text>
+                <text class="result-time">{{item.displayTime}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <!-- States -->
+      <view class="loading-state" wx:if="{{loading}}">
+        <text>加载中...</text>
+      </view>
+      <view class="empty-state" wx:if="{{!loading && resultList.length === 0}}">
+        <image src="/assets/images/loupe.png" class="empty-icon" mode="aspectFit"></image>
+        <text class="empty-text">没有找到相关内容</text>
+      </view>
+      <view class="no-more" wx:if="{{!hasMore && resultList.length > 0}}">
+        <text>— 没有更多了 —</text>
+      </view>
+      <view style="height: 40rpx;"></view>
+    </scroll-view>
+  </view>
+</view>

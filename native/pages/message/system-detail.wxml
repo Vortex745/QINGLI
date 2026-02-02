@@ -1,0 +1,24 @@
+<view class="article-container">
+  <view class="article-header">
+    <text class="article-title">{{title || '系统通知'}}</text>
+    <view class="article-meta">
+      <text class="article-tag">官方</text>
+      <text class="article-time">{{timeStr}}</text>
+    </view>
+  </view>
+  
+  <view class="article-divider"></view>
+  
+  <view class="article-content">
+    <text class="content-text" user-select>{{content}}</text>
+  </view>
+  
+  <view class="article-footer">
+    <view class="signature">
+      <text class="team-name">闲趣平台管理团队</text>
+      <!-- Optional: Display date if available, or static brand name -->
+      <text class="date-now" wx:if="{{dateStr}}">{{dateStr}}</text>
+      <text class="date-now" wx:else>XIANQU TECHNOLOGY</text>
+    </view>
+  </view>
+</view>

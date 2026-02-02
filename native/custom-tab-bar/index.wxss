@@ -1,0 +1,44 @@
+/* custom-tab-bar/index.wxss */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1rpx solid #F0F0F0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.02);
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tab-bar-item:active {
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.cover-image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 6rpx;
+}
+
+.text {
+  font-size: 22rpx;
+  font-weight: 500;
+}
+
+/* Center button (Sell) special styling if requested later, keeping it standard for now */

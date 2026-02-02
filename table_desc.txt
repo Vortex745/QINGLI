@@ -1,0 +1,9 @@
+Field	Type	Null	Key	Default	Extra
+id	bigint	NO	PRI	NULL	auto_increment
+sender_id	bigint	NO	MUL	NULL	
+receiver_id	bigint	NO	MUL	NULL	
+content	text	NO		NULL	
+type	int	YES		0	
+goods_id	bigint	YES		NULL	
+is_read	int	YES		0	
+create_time	datetime	YES	MUL	CURRENT_TIMESTAMP	DEFAULT_GENERATED

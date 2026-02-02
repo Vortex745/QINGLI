@@ -1,0 +1,57 @@
+<!-- pages/message/chat.wxml -->
+<view class="container">
+    <view class="header" wx:if="{{goodsId && goodsInfo}}">
+         <view class="goods-context">
+            <image src="{{goodsInfo.fullImageUrl || '/assets/images/logo.png'}}" class="goods-img" mode="aspectFill"></image>
+            <view class="goods-info">
+                <text class="goods-name">{{goodsInfo.name}}</text>
+                <text class="goods-price">¥{{goodsInfo.price}}</text>
+            </view>
+            <view class="send-goods-btn" bindtap="sendGoodsCard">发送链接</view>
+        </view>
+    </view>
+
+    <scroll-view class="chat-area" scroll-y scroll-into-view="{{scrollTarget}}" style="height: calc(100vh - 120rpx - {{goodsId ? 140 : 0}}rpx);">
+        <view class="msg-list">
+            <block wx:for="{{messages}}" wx:key="index">
+                <view class="msg-item {{item.isSelf ? 'self' : ''}}" id="msg-{{index}}">
+                    <image src="{{item.isSelf ? myAvatar : targetUserAvatar}}" class="avatar" mode="aspectFill"></image>
+                    
+                    <view class="msg-content">
+                         <!-- Text -->
+                         <text wx:if="{{item.type === 0}}" class="text-content">{{item.content}}</text>
+                         
+                         <!-- Image -->
+                         <image wx:if="{{item.type === 1}}" src="{{item.content}}" class="img-content" mode="widthFix" bindtap="previewImage" data-src="{{item.content}}"></image>
+                         
+                         <!-- Goods Card -->
+                         <view wx:if="{{item.type === 2}}" class="card-content" bindtap="goToGoods" data-id="{{item.goodsId}}">
+                            <text class="card-title">我想买这个宝贝</text>
+                            <text class="card-desc">点击查看详情</text>
+                         </view>
+                    </view>
+                </view>
+            </block>
+            <view id="scroll-bottom" style="height: 20rpx;"></view>
+        </view>
+    </scroll-view>
+
+    <view class="input-area">
+        <view class="emoji-icon" bindtap="toggleEmoji">
+            <text class="iconfont icon-emoji">😀</text>
+        </view>
+        <input type="text" class="input-box" value="{{inputContent}}" bindinput="onInput" bindconfirm="sendMessage" confirm-type="send" placeholder="发送消息..." />
+        <view class="send-btn {{!inputContent ? 'disabled' : ''}}" bindtap="sendMessage">发送</view>
+    </view>
+
+    <!-- Emoji Panel -->
+    <view class="emoji-panel" wx:if="{{showEmoji}}">
+        <scroll-view scroll-y style="height: 100%;">
+            <view class="emoji-grid">
+                <view class="emoji-item" wx:for="{{emojis}}" wx:key="index" bindtap="addEmoji" data-emoji="{{item}}">
+                    {{item}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

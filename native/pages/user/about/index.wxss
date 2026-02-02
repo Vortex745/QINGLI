@@ -1,0 +1,148 @@
+/* pages/user/about/index.wxss */
+page {
+  background-color: #f8f9fb;
+}
+
+.container {
+  padding: 60rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 0 60rpx;
+}
+
+.logo-box {
+  width: 160rpx;
+  height: 160rpx;
+  background: #ffffff;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20rpx 40rpx rgba(7, 193, 96, 0.1);
+  margin-bottom: 30rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-box::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(7, 193, 96, 0.1) 0%, transparent 100%);
+  border-radius: 50%;
+}
+
+.app-logo {
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 1;
+}
+
+.app-name {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 12rpx;
+  letter-spacing: 2rpx;
+}
+
+.app-version {
+  font-size: 26rpx;
+  color: #888;
+}
+
+.content-list {
+  flex: 1;
+  margin-top: 40rpx;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 40rpx;
+  border-radius: 32rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.02);
+}
+
+.card-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.card-desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.menu-list {
+  background: #ffffff;
+  border-radius: 32rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.02);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36rpx 40rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:active {
+  background-color: #f9f9f9;
+}
+
+.menu-label {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.arrow-box {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  color: #ccc;
+  font-size: 36rpx;
+  line-height: 1;
+}
+
+.footer {
+  padding: 60rpx 0 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 24rpx;
+  color: #bbb;
+  margin-bottom: 8rpx;
+}
+
+.all-rights {
+  font-size: 22rpx;
+  color: #ddd;
+}

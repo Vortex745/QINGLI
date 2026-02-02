@@ -1,0 +1,431 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.jin:xianqu_backend >-----------------------
+[INFO] Building xianqu_backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.1:run (default-cli) > test-compile @ xianqu_backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ xianqu_backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ xianqu_backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ xianqu_backend ---
+[INFO] skip non existing resourceDirectory E:\testJava\xianqu_uniapp\xianqu_backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ xianqu_backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.4.1:run (default-cli) < test-compile @ xianqu_backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.1:run (default-cli) @ xianqu_backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-01-14T03:14:40.093+08:00  INFO 38520 --- [xianqu-backend] [           main] c.j.x.XianquBackendApplication           : Starting XianquBackendApplication using Java 23.0.1 with PID 38520 (E:\testJava\xianqu_uniapp\xianqu_backend\target\classes started by 14253 in E:\testJava\xianqu_uniapp\xianqu_backend)
+2026-01-14T03:14:40.094+08:00 DEBUG 38520 --- [xianqu-backend] [           main] c.j.x.XianquBackendApplication           : Running with Spring Boot v3.4.1, Spring v6.2.1
+2026-01-14T03:14:40.094+08:00  INFO 38520 --- [xianqu-backend] [           main] c.j.x.XianquBackendApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-01-14T03:14:41.040+08:00  INFO 38520 --- [xianqu-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-01-14T03:14:41.051+08:00  INFO 38520 --- [xianqu-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-14T03:14:41.051+08:00  INFO 38520 --- [xianqu-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-14T03:14:41.103+08:00  INFO 38520 --- [xianqu-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2026-01-14T03:14:41.104+08:00  INFO 38520 --- [xianqu-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 972 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Get /198.18.0.1 network interface 
+Get network interface info: name:iftype53_32768 (Meta Tunnel)
+Initialization Sequence datacenterId:0 workerId:30
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+2026-01-14T03:14:42.526+08:00  INFO 38520 --- [xianqu-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/api'
+2026-01-14T03:14:42.532+08:00  INFO 38520 --- [xianqu-backend] [           main] c.j.x.XianquBackendApplication           : Started XianquBackendApplication in 2.739 seconds (process running for 3.016)
+2026-01-14T03:15:57.410+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-14T03:15:57.411+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-14T03:15:57.414+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-01-14T03:15:57.662+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-1] c.jin.xianqu_backend.aspect.LogAspect    : Request Start: [POST http://localhost:8081/api/file/upload] IP: 127.0.0.1, User: 1, Method: com.jin.xianqu_backend.controller.FileController.upload, Args: [org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@234b1613, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@5bb9349e]
+2026-01-14T03:15:57.680+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-1] c.jin.xianqu_backend.aspect.LogAspect    : Request End: [POST http://localhost:8081/api/file/upload] Duration: 20ms, User: 1
+2026-01-14T03:15:57.790+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-2] c.jin.xianqu_backend.aspect.LogAspect    : Request Start: [POST http://localhost:8081/api/goods/add] IP: 0:0:0:0:0:0:0:1, User: 1, Method: com.jin.xianqu_backend.controller.GoodsController.addGoods, Args: [GoodsAddDTO(name=1233, description=123, price=312, imageUrl=http://localhost:8081/api/profile/4038d347-535f-4425-acd5-bda121ab5cf7.png)]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c30dd7d] was not registered for synchronization because synchronization is not active
+2026-01-14T03:15:57.810+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-14T03:15:58.113+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b0d61ff
+2026-01-14T03:15:58.114+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@1690602702 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar_url,role,current_area_id,create_time,update_time FROM sys_user WHERE id=?
+==> Parameters: 1(Long)
+<==    Columns: id, openid, nickname, avatar_url, role, current_area_id, create_time, update_time
+<==        Row: 1, oea6Y7QeYN4ffZ2zS1cGTX9RTGaI, 子衿, http://localhost:8081/api/profile/f7a30ed7-6dc6-4aca-8ffa-2279b7d8ce6b.jpeg, user, null, 2026-01-14 02:28:41, 2026-01-14 02:47:48
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c30dd7d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c99c4ad] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1306100346 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: INSERT INTO bus_goods ( user_id, area_id, name, description, price, image_url, status, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+==> Parameters: 1(Long), 1(Long), 1233(String), 123(String), 312(BigDecimal), http://localhost:8081/api/profile/4038d347-535f-4425-acd5-bda121ab5cf7.png(String), 0(Integer), 2026-01-14 03:15:58.175(Timestamp), 2026-01-14 03:15:58.175(Timestamp)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c99c4ad]
+2026-01-14T03:15:58.209+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-2] c.jin.xianqu_backend.aspect.LogAspect    : Request End: [POST http://localhost:8081/api/goods/add] Duration: 421ms, User: 1
+2026-01-14T03:16:01.790+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-3] c.jin.xianqu_backend.aspect.LogAspect    : Request Start: [GET http://localhost:8081/api/goods/list] IP: 0:0:0:0:0:0:0:1, User: null, Method: com.jin.xianqu_backend.controller.GoodsController.listGoods, Args: [1, 20, null, null]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@206333da] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1425619606 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM bus_goods WHERE is_delete = 0 AND (status = ?)
+==> Parameters: 0(Integer)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+==>  Preparing: SELECT id,user_id,area_id,name,description,price,image_url,status,is_delete,create_time,update_time FROM bus_goods WHERE is_delete=0 AND (status = ?) ORDER BY create_time DESC LIMIT ?
+==> Parameters: 0(Integer), 20(Long)
+<==    Columns: id, user_id, area_id, name, description, price, image_url, status, is_delete, create_time, update_time
+<==        Row: 1, 1, 1, 1233, <<BLOB>>, 312.00, http://localhost:8081/api/profile/4038d347-535f-4425-acd5-bda121ab5cf7.png, 0, 0, 2026-01-14 03:15:58, 2026-01-14 03:15:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@206333da]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f75361c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1498893068 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar_url,role,current_area_id,create_time,update_time FROM sys_user WHERE id=?
+==> Parameters: 1(Long)
+<==    Columns: id, openid, nickname, avatar_url, role, current_area_id, create_time, update_time
+<==        Row: 1, oea6Y7QeYN4ffZ2zS1cGTX9RTGaI, 子衿, http://localhost:8081/api/profile/f7a30ed7-6dc6-4aca-8ffa-2279b7d8ce6b.jpeg, user, null, 2026-01-14 02:28:41, 2026-01-14 02:47:48
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f75361c]
+2026-01-14T03:16:01.917+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-3] c.jin.xianqu_backend.aspect.LogAspect    : Request End: [GET http://localhost:8081/api/goods/list] Duration: 127ms, User: null
+2026-01-14T03:16:05.703+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-6] c.jin.xianqu_backend.aspect.LogAspect    : Request Start: [GET http://localhost:8081/api/goods/1] IP: 0:0:0:0:0:0:0:1, User: 1, Method: com.jin.xianqu_backend.controller.GoodsController.getGoodsDetail, Args: [1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c8b6631] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@294529010 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,area_id,name,description,price,image_url,status,is_delete,create_time,update_time FROM bus_goods WHERE id=? AND is_delete=0
+==> Parameters: 1(Long)
+<==    Columns: id, user_id, area_id, name, description, price, image_url, status, is_delete, create_time, update_time
+<==        Row: 1, 1, 1, 1233, <<BLOB>>, 312.00, http://localhost:8081/api/profile/4038d347-535f-4425-acd5-bda121ab5cf7.png, 0, 0, 2026-01-14 03:15:58, 2026-01-14 03:15:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c8b6631]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@404b7b48] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@664151966 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar_url,role,current_area_id,create_time,update_time FROM sys_user WHERE id=?
+==> Parameters: 1(Long)
+<==    Columns: id, openid, nickname, avatar_url, role, current_area_id, create_time, update_time
+<==        Row: 1, oea6Y7QeYN4ffZ2zS1cGTX9RTGaI, 子衿, http://localhost:8081/api/profile/f7a30ed7-6dc6-4aca-8ffa-2279b7d8ce6b.jpeg, user, null, 2026-01-14 02:28:41, 2026-01-14 02:47:48
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@404b7b48]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f8ff628] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1141196714 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT COUNT( * ) AS total FROM bus_favorite WHERE (user_id = ? AND target_id = ? AND type = ?)
+==> Parameters: 1(Long), 1(Long), 1(Integer)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f8ff628]
+2026-01-14T03:16:06.217+08:00 ERROR 38520 --- [xianqu-backend] [nio-8081-exec-6] c.j.x.exception.GlobalExceptionHandler   : Exception
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'xianqu_pdb.bus_favorite' doesn't exist
+### The error may exist in com/jin/xianqu_backend/mapper/FavoriteMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT COUNT( * ) AS total FROM bus_favorite      WHERE  (user_id = ? AND target_id = ? AND type = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'xianqu_pdb.bus_favorite' doesn't exist
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.1.jar:6.2.1]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.1.jar:6.2.1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy73.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.selectCount(Unknown Source) ~[na:na]
+	at com.jin.xianqu_backend.service.impl.GoodsServiceImpl.getGoodsDetail(GoodsServiceImpl.java:199) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723) ~[spring-aop-6.2.1.jar:6.2.1]
+	at com.jin.xianqu_backend.service.impl.GoodsServiceImpl$$SpringCGLIB$$0.getGoodsDetail(<generated>) ~[classes/:na]
+	at com.jin.xianqu_backend.controller.GoodsController.getGoodsDetail(GoodsController.java:60) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89) ~[spring-aop-6.2.1.jar:6.2.1]
+	at com.jin.xianqu_backend.aspect.LogAspect.doAround(LogAspect.java:53) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:638) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:628) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.1.jar:6.2.1]
+	at com.jin.xianqu_backend.controller.GoodsController$$SpringCGLIB$$0.getGoodsDetail(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'xianqu_pdb.bus_favorite' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:382) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.16.jar:3.5.16]
+	at jdk.proxy3/jdk.proxy3.$Proxy117.execute(Unknown Source) ~[na:na]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.16.jar:3.5.16]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.16.jar:3.5.16]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.16.jar:3.5.16]
+	at jdk.proxy2/jdk.proxy2.$Proxy114.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 78 common frames omitted
+
+2026-01-14T03:16:10.345+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-7] c.jin.xianqu_backend.aspect.LogAspect    : Request Start: [GET http://localhost:8081/api/goods/list] IP: 0:0:0:0:0:0:0:1, User: null, Method: com.jin.xianqu_backend.controller.GoodsController.listGoods, Args: [1, 20, null, null]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18771401] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@311394161 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM bus_goods WHERE is_delete = 0 AND (status = ?)
+==> Parameters: 0(Integer)
+<==    Columns: total
+<==        Row: 1
+<==      Total: 1
+==>  Preparing: SELECT id,user_id,area_id,name,description,price,image_url,status,is_delete,create_time,update_time FROM bus_goods WHERE is_delete=0 AND (status = ?) ORDER BY create_time DESC LIMIT ?
+==> Parameters: 0(Integer), 20(Long)
+<==    Columns: id, user_id, area_id, name, description, price, image_url, status, is_delete, create_time, update_time
+<==        Row: 1, 1, 1, 1233, <<BLOB>>, 312.00, http://localhost:8081/api/profile/4038d347-535f-4425-acd5-bda121ab5cf7.png, 0, 0, 2026-01-14 03:15:58, 2026-01-14 03:15:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@18771401]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6610d639] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@260921725 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar_url,role,current_area_id,create_time,update_time FROM sys_user WHERE id=?
+==> Parameters: 1(Long)
+<==    Columns: id, openid, nickname, avatar_url, role, current_area_id, create_time, update_time
+<==        Row: 1, oea6Y7QeYN4ffZ2zS1cGTX9RTGaI, 子衿, http://localhost:8081/api/profile/f7a30ed7-6dc6-4aca-8ffa-2279b7d8ce6b.jpeg, user, null, 2026-01-14 02:28:41, 2026-01-14 02:47:48
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6610d639]
+2026-01-14T03:16:10.359+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-7] c.jin.xianqu_backend.aspect.LogAspect    : Request End: [GET http://localhost:8081/api/goods/list] Duration: 14ms, User: null
+2026-01-14T03:16:11.459+08:00  INFO 38520 --- [xianqu-backend] [nio-8081-exec-9] c.jin.xianqu_backend.aspect.LogAspect    : Request Start: [GET http://localhost:8081/api/goods/1] IP: 0:0:0:0:0:0:0:1, User: 1, Method: com.jin.xianqu_backend.controller.GoodsController.getGoodsDetail, Args: [1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c70f354] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@407856130 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,area_id,name,description,price,image_url,status,is_delete,create_time,update_time FROM bus_goods WHERE id=? AND is_delete=0
+==> Parameters: 1(Long)
+<==    Columns: id, user_id, area_id, name, description, price, image_url, status, is_delete, create_time, update_time
+<==        Row: 1, 1, 1, 1233, <<BLOB>>, 312.00, http://localhost:8081/api/profile/4038d347-535f-4425-acd5-bda121ab5cf7.png, 0, 0, 2026-01-14 03:15:58, 2026-01-14 03:15:58
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c70f354]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@772bb12b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1826227913 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT id,openid,nickname,avatar_url,role,current_area_id,create_time,update_time FROM sys_user WHERE id=?
+==> Parameters: 1(Long)
+<==    Columns: id, openid, nickname, avatar_url, role, current_area_id, create_time, update_time
+<==        Row: 1, oea6Y7QeYN4ffZ2zS1cGTX9RTGaI, 子衿, http://localhost:8081/api/profile/f7a30ed7-6dc6-4aca-8ffa-2279b7d8ce6b.jpeg, user, null, 2026-01-14 02:28:41, 2026-01-14 02:47:48
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@772bb12b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d620620] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@401230414 wrapping com.mysql.cj.jdbc.ConnectionImpl@b0d61ff] will not be managed by Spring
+==>  Preparing: SELECT COUNT( * ) AS total FROM bus_favorite WHERE (user_id = ? AND target_id = ? AND type = ?)
+==> Parameters: 1(Long), 1(Long), 1(Integer)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d620620]
+2026-01-14T03:16:11.469+08:00 ERROR 38520 --- [xianqu-backend] [nio-8081-exec-9] c.j.x.exception.GlobalExceptionHandler   : Exception
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'xianqu_pdb.bus_favorite' doesn't exist
+### The error may exist in com/jin/xianqu_backend/mapper/FavoriteMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT COUNT( * ) AS total FROM bus_favorite      WHERE  (user_id = ? AND target_id = ? AND type = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Table 'xianqu_pdb.bus_favorite' doesn't exist
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.1.jar:6.2.1]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.1.jar:6.2.1]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy73.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy82.selectCount(Unknown Source) ~[na:na]
+	at com.jin.xianqu_backend.service.impl.GoodsServiceImpl.getGoodsDetail(GoodsServiceImpl.java:199) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723) ~[spring-aop-6.2.1.jar:6.2.1]
+	at com.jin.xianqu_backend.service.impl.GoodsServiceImpl$$SpringCGLIB$$0.getGoodsDetail(<generated>) ~[classes/:na]
+	at com.jin.xianqu_backend.controller.GoodsController.getGoodsDetail(GoodsController.java:60) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89) ~[spring-aop-6.2.1.jar:6.2.1]
+	at com.jin.xianqu_backend.aspect.LogAspect.doAround(LogAspect.java:53) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:638) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:628) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.1.jar:6.2.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.1.jar:6.2.1]
+	at com.jin.xianqu_backend.controller.GoodsController$$SpringCGLIB$$0.getGoodsDetail(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'xianqu_pdb.bus_favorite' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:382) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58) ~[mybatis-3.5.16.jar:3.5.16]
+	at jdk.proxy3/jdk.proxy3.$Proxy117.execute(Unknown Source) ~[na:na]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.5.16.jar:3.5.16]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) ~[mybatis-3.5.16.jar:3.5.16]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:81) ~[mybatis-plus-extension-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59) ~[mybatis-3.5.16.jar:3.5.16]
+	at jdk.proxy2/jdk.proxy2.$Proxy114.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) ~[mybatis-3.5.16.jar:3.5.16]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) ~[mybatis-3.5.16.jar:3.5.16]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) ~[mybatis-spring-3.0.3.jar:3.0.3]
+	... 78 common frames omitted
+

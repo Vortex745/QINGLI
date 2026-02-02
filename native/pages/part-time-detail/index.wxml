@@ -1,0 +1,163 @@
+<view class="container">
+  <!-- Custom Navigation Bar -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-content">
+      <view class="circle-btn" bindtap="goBack">
+        <image src="/assets/images/chevron-left.png" class="nav-icon"></image>
+      </view>
+      <view class="nav-title" wx:if="{{showTitleTitle}}">{{job.title}}</view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="main-scroll" style="padding-top: {{statusBarHeight + 44}}px;">
+    <!-- 1. Seller Info Header (Top) -->
+    <view class="seller-header">
+      <view class="seller-left">
+        <image src="{{job.fullUserAvatar}}" mode="aspectFill" lazy-load class="seller-avatar" bindtap="navToProfile"></image>
+        <view class="seller-info" bindtap="navToProfile">
+          <text class="seller-name">{{job.userNickname || '未知用户'}}</text>
+          <text class="seller-meta">{{job.timeAgo}}</text>
+        </view>
+      </view>
+      <view class="follow-btn {{isFollowed ? 'followed' : ''}}" bindtap="toggleFollowUser">
+        {{ isFollowed ? '已关注' : '关注' }}
+      </view>
+    </view>
+
+    <!-- 2. Job Info Section -->
+    <view class="section-job">
+      <view class="job-price-row">
+        <text class="salary">{{job.salary}}</text>
+        <text class="settlement">{{job.settlementMethod}}</text>
+      </view>
+      <text class="job-title">{{job.title}}</text>
+    </view>
+
+    <!-- 2.5 Stats Row -->
+    <view class="stats-row">
+      <view class="stats-left">
+        <text>{{ job.viewCount || 0 }}浏览</text>
+      </view>
+    </view>
+
+    <!-- 3. Job Details Card -->
+    <view class="section-params">
+      <view style="display: flex; flex-wrap: wrap;">
+        <view class="param-item">
+          <text class="param-label">人数</text>
+          <text class="param-value">招{{job.recruitCount || 1}}人</text>
+        </view>
+        <view class="param-item">
+          <text class="param-label">地点</text>
+          <text class="param-value">{{job.location || '校内'}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 4. Description -->
+    <view class="section-content">
+      <view class="section-header">
+        <text class="section-title">工作详情</text>
+      </view>
+      <text class="goods-desc" user-select>{{job.content || '暂无详细描述'}}</text>
+    </view>
+
+
+    <!-- 5. Comments Section -->
+    <view class="section-comments">
+      <view class="comment-header">
+        <text class="comment-title">全部讨论 ({{comments.length}})</text>
+      </view>
+      
+      <view wx:if="{{comments.length > 0}}" class="comment-list">
+        <block wx:for="{{comments}}" wx:key="id">
+          <view class="comment-item">
+            <image src="{{item.fullAvatarUrl}}" mode="aspectFill" class="comment-avatar" bindtap="navToCommentProfile" data-userid="{{item.userId}}"></image>
+            <view class="comment-body">
+              <view class="comment-user-row">
+                <text class="comment-user">{{item.nickname}}</text>
+                <text class="seller-tag" wx:if="{{job.userId == item.userId}}">发布者</text>
+              </view>
+              <text class="comment-content">{{item.content}}</text>
+              <text class="comment-time">{{item.createTimeStr}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:else style="padding: 60rpx 0; text-align: center;">
+        <text style="color: #ccc; font-size: 26rpx;">暂无讨论，快来咨询吧~</text>
+      </view>
+
+      <view class="comment-input-area">
+        <input 
+          type="text" 
+          value="{{commentText}}" 
+          bindinput="onCommentInput"
+          placeholder="咨询工作细节..." 
+          class="static-input"
+          bindconfirm="submitComment"
+        />
+        <view class="static-send-btn" bindtap="submitComment">发送</view>
+      </view>
+    </view>
+
+    <view style="height: 180rpx;"></view>
+  </scroll-view>
+
+  <!-- Bottom Bar -->
+  <view class="bottom-bar">
+    <view class="bar-left">
+      <view class="bar-btn" bindtap="toggleFavorite">
+        <image src="{{favorite ? '/assets/images/red-heart.png' : '/assets/images/heart.png'}}" class="bar-icon"></image>
+        <text>{{ favorite ? '已点赞' : '点赞' }}</text>
+      </view>
+      <view class="bar-btn" bindtap="showReportModalHandler">
+        <image src="/assets/images/attention.png" class="bar-icon"></image>
+        <text>举报</text>
+      </view>
+    </view>
+    <view class="bar-right">
+      <view class="buy-now-btn" bindtap="contact">立即咨询</view>
+    </view>
+  </view>
+
+  <!-- Report Modal -->
+  <view class="report-modal-mask" wx:if="{{showReportModal}}" bindtap="hideReportModal"></view>
+  <view class="report-modal {{showReportModal ? 'show' : ''}}">
+    <view class="report-header">
+      <text class="report-title">举报内容</text>
+      <view class="report-close" bindtap="hideReportModal">×</view>
+    </view>
+    <view class="report-body">
+      <view class="report-section">
+        <text class="report-label">举报类型</text>
+        <view class="report-types">
+          <view 
+            class="report-type-item {{reportType === item.value ? 'active' : ''}}" 
+            wx:for="{{reportTypes}}" 
+            wx:key="value"
+            bindtap="selectReportType"
+            data-value="{{item.value}}"
+          >
+            {{item.label}}
+          </view>
+        </view>
+      </view>
+      <view class="report-section">
+        <text class="report-label">举报理由</text>
+        <textarea 
+          class="report-textarea" 
+          placeholder="请详细描述举报理由，以便我们更好地处理..."
+          value="{{reportReason}}"
+          bindinput="onReportReasonInput"
+          maxlength="200"
+        ></textarea>
+        <text class="report-count">{{reportReason.length}}/200</text>
+      </view>
+    </view>
+    <view class="report-footer">
+      <view class="report-btn cancel" bindtap="hideReportModal">取消</view>
+      <view class="report-btn submit" bindtap="submitReport">提交举报</view>
+    </view>
+  </view>
+</view>

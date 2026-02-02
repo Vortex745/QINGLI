@@ -1,0 +1,2 @@
+id	content	type	receiver_id
+12	Test JSON File\nContent from file	9	0

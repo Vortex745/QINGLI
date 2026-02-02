@@ -1,0 +1,153 @@
+<view class="page">
+    <!-- Navigation Bar -->
+    <view class="custom-header-area" style="height: {{headerTotalHeight}}px;">
+        <view class="header-spacer" style="height: {{headerSpacerHeight}}px;"></view>
+        <view class="action-bar">
+            <view class="action-btn cancel" bindtap="goBack">取消</view>
+            <text class="action-title">{{ isEditMode ? '编辑兼职' : '发布兼职' }}</text>
+            <view class="action-btn publish {{submitting ? 'disabled' : ''}}" bindtap="submit">
+                {{ isEditMode ? '保存' : '发布' }}
+            </view>
+        </view>
+    </view>
+
+    <scroll-view class="main-content" scroll-y style="padding-top: {{headerTotalHeight}}px;">
+        <!-- Type Switcher -->
+        <view class="type-switcher">
+            <view class="switch-item {{currentMode === 'quick' ? 'active' : ''}}" bindtap="switchMode" data-mode="quick">
+                <text>快速发布</text>
+            </view>
+            <view class="switch-item {{currentMode === 'full' ? 'active' : ''}}" bindtap="switchMode" data-mode="full">
+                <text>完整发布</text>
+            </view>
+        </view>
+
+        <view class="form-container">
+             <!-- Title -->
+             <view class="form-item no-border">
+                  <textarea class="title-input" value="{{form.title}}" bindinput="onTitleInput" placeholder="兼职标题 (如: 传单派发)" placeholder-style="color: #bbb; font-weight: bold;" auto-height />
+             </view>
+
+             <!-- Start Time -->
+            <view class="form-item">
+                <text class="label">开始时间</text>
+                <view class="datetime-box">
+                    <picker mode="date" bindchange="onStartDateChange" start="{{minDate}}" value="{{startDate}}">
+                        <view class="datetime-val {{!startDate ? 'placeholder' : ''}}">{{ startDate || '日期' }}</view>
+                    </picker>
+                    <picker mode="time" bindchange="onStartTimeChange" start="{{startDate === minDate ? minTime : '00:00'}}" value="{{startTime}}">
+                        <view class="datetime-val {{!startTime ? 'placeholder' : ''}}">{{ startTime || '时间' }}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <!-- End Time -->
+            <view class="form-item">
+                <text class="label">结束时间</text>
+                <view class="datetime-box">
+                    <picker mode="date" bindchange="onEndDateChange" start="{{startDate || minDate}}" value="{{endDate}}">
+                        <view class="datetime-val {{!endDate ? 'placeholder' : ''}}">{{ endDate || '日期' }}</view>
+                    </picker>
+                    <picker mode="time" bindchange="onEndTimeChange" start="{{(endDate && endDate === startDate) ? startTime : '00:00'}}" value="{{endTime}}">
+                        <view class="datetime-val {{!endTime ? 'placeholder' : ''}}">{{ endTime || '时间' }}</view>
+                    </picker>
+                </view>
+            </view>
+
+
+            <!-- Work Location -->
+            <view class="form-item">
+                <text class="label">工作地点</text>
+                <input class="input" value="{{form.workLocation}}" bindinput="onWorkLocationInput" placeholder="详细地址" />
+            </view>
+
+            <!-- Salary -->
+            <view class="form-item">
+                <text class="label">薪资待遇</text>
+                <view class="salary-box">
+                    <input class="salary-input" type="digit" value="{{form.salaryAmount}}" bindinput="onSalaryAmountInput" placeholder="0" />
+                    <picker range="{{salaryUnits}}" bindchange="onSalaryUnitChange">
+                        <view class="unit-picker">
+                            <text>{{ currentSalaryUnit }}</text>
+                            <text class="arrow">▼</text>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+
+            <!-- Content -->
+            <view class="form-section">
+                <text class="section-label">工作详情</text>
+                <textarea class="textarea" value="{{form.content}}" bindinput="onContentInput" placeholder="填写详细的工作内容、要求等..." maxlength="500"></textarea>
+            </view>
+
+            <!-- Contact -->
+             <view class="form-item">
+                <text class="label">联系方式</text>
+                <view class="contact-box">
+                    <picker range="{{contactTypes}}" bindchange="onContactTypeChange">
+                         <view class="type-picker">
+                            <text>{{ contactTypes[contactTypeIndex] }}</text>
+                            <text class="arrow">▼</text>
+                        </view>
+                    </picker>
+                    <input class="input" value="{{form.contactInfo}}" bindinput="onContactInfoInput" placeholder="请输入号码" style="margin-left: 20rpx;" />
+                </view>
+            </view>
+            
+            <block wx:if="{{currentMode === 'full'}}">
+                <view class="divider"></view>
+
+                 <!-- Settlement -->
+                <view class="form-item">
+                    <text class="label">结算方式</text>
+                    <picker range="{{settlementDefaults}}" bindchange="onSettlementChange">
+                        <view class="picker-val {{!form.settlementMethod ? 'placeholder' : ''}}">
+                            {{ form.settlementMethod || '请选择' }}
+                        </view>
+                    </picker>
+                     <text class="arrow">></text>
+                </view>
+
+                 <!-- Recruit Count -->
+                <view class="form-item">
+                    <text class="label">招聘人数</text>
+                    <input class="input" type="number" value="{{form.recruitCount}}" bindinput="onRecruitCountInput" placeholder="人数" style="text-align: right;" />
+                </view>
+
+                 <!-- Student Req -->
+                <view class="form-item">
+                    <text class="label">学生要求</text>
+                     <input class="input" value="{{form.studentRequirement}}" bindinput="onStudentReqInput" placeholder="如：限大二及以上" style="text-align: right;" />
+                </view>
+
+            </block>
+
+            <block wx:if="{{isEditMode}}">
+                <view class="divider"></view>
+                <!-- Recruit Status -->
+                <view class="form-item" style="justify-content: space-between;">
+                    <view>
+                        <text class="label">正在招募</text>
+                        <view class="sub-label">关闭后将显示为“已招满”</view>
+                    </view>
+                    <switch checked="{{form.status === 0}}" color="#2E5C35" bindchange="onRecruitStatusChange" style="transform:scale(0.8)"/>
+                </view>
+
+                <!-- Shelf Status -->
+                <view class="form-item" style="justify-content: space-between;">
+                    <view>
+                        <text class="label">上架状态</text>
+                        <view class="sub-label">关闭后兼职信息将下架不可见</view>
+                    </view>
+                    <switch checked="{{form.status === 0}}" color="#2E5C35" bindchange="onShelfStatusChange" style="transform:scale(0.8)"/>
+                </view>
+            </block>
+        </view>
+
+         <view class="bottom-hint" wx:if="{{currentMode === 'quick'}}">
+            快速发布模式将使用默认内容和私信联系
+        </view>
+        <view style="height: 60rpx;"></view>
+    </scroll-view>
+</view>

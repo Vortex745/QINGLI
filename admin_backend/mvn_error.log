@@ -1,0 +1,147 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.jin:xianqu_admin_backend >--------------------
+[INFO] Building xianqu_admin_backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ xianqu_admin_backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ xianqu_admin_backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 16 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[21,15] 找不到符号
+  符号:   方法 setCode(int)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[22,15] 找不到符号
+  符号:   方法 setMsg(java.lang.String)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[23,15] 找不到符号
+  符号:   方法 setData(T)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[29,15] 找不到符号
+  符号:   方法 setCode(int)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[30,15] 找不到符号
+  符号:   方法 setMsg(java.lang.String)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[36,15] 找不到符号
+  符号:   方法 setCode(int)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[37,15] 找不到符号
+  符号:   方法 setMsg(java.lang.String)
+  位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/exception/GlobalExceptionHandler.java:[17,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.jin.xianqu_admin.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/exception/GlobalExceptionHandler.java:[23,9] 找不到符号
+  符号:   变量 log
+  位置: 类 com.jin.xianqu_admin.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[23,40] 找不到符号
+  符号:   方法 getUsername()
+  位置: 类型为com.jin.xianqu_admin.model.dto.AdminLoginDTO的变量 adminLoginDTO
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[24,40] 找不到符号
+  符号:   方法 getPassword()
+  位置: 类型为com.jin.xianqu_admin.model.dto.AdminLoginDTO的变量 adminLoginDTO
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[35,34] 找不到符号
+  符号:   方法 getPassword()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[39,33] 找不到符号
+  符号:   方法 getRole()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[44,34] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[45,32] 找不到符号
+  符号:   方法 getRole()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[49,23] 找不到符号
+  符号:   方法 builder()
+  位置: 类 com.jin.xianqu_admin.model.vo.LoginVO
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[50,25] 找不到符号
+  符号:   方法 getId()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[52,31] 找不到符号
+  符号:   方法 getNickname()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[53,32] 找不到符号
+  符号:   方法 getAvatarUrl()
+  位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[INFO] 19 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.071 s
+[INFO] Finished at: 2026-01-21T19:47:50+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project xianqu_admin_backend: Compilation failure: Compilation failure: 
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[21,15] 找不到符号
+[ERROR]   符号:   方法 setCode(int)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[22,15] 找不到符号
+[ERROR]   符号:   方法 setMsg(java.lang.String)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[23,15] 找不到符号
+[ERROR]   符号:   方法 setData(T)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[29,15] 找不到符号
+[ERROR]   符号:   方法 setCode(int)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[30,15] 找不到符号
+[ERROR]   符号:   方法 setMsg(java.lang.String)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[36,15] 找不到符号
+[ERROR]   符号:   方法 setCode(int)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/common/Result.java:[37,15] 找不到符号
+[ERROR]   符号:   方法 setMsg(java.lang.String)
+[ERROR]   位置: 类型为com.jin.xianqu_admin.common.Result<T>的变量 result
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/exception/GlobalExceptionHandler.java:[17,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.jin.xianqu_admin.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/exception/GlobalExceptionHandler.java:[23,9] 找不到符号
+[ERROR]   符号:   变量 log
+[ERROR]   位置: 类 com.jin.xianqu_admin.exception.GlobalExceptionHandler
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[23,40] 找不到符号
+[ERROR]   符号:   方法 getUsername()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.dto.AdminLoginDTO的变量 adminLoginDTO
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[24,40] 找不到符号
+[ERROR]   符号:   方法 getPassword()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.dto.AdminLoginDTO的变量 adminLoginDTO
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[35,34] 找不到符号
+[ERROR]   符号:   方法 getPassword()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[39,33] 找不到符号
+[ERROR]   符号:   方法 getRole()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[44,34] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[45,32] 找不到符号
+[ERROR]   符号:   方法 getRole()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[49,23] 找不到符号
+[ERROR]   符号:   方法 builder()
+[ERROR]   位置: 类 com.jin.xianqu_admin.model.vo.LoginVO
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[50,25] 找不到符号
+[ERROR]   符号:   方法 getId()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[52,31] 找不到符号
+[ERROR]   符号:   方法 getNickname()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] /E:/testJava/xianqu_uniapp/xianqu_admin_backend/src/main/java/com/jin/xianqu_admin/service/impl/AdminUserServiceImpl.java:[53,32] 找不到符号
+[ERROR]   符号:   方法 getAvatarUrl()
+[ERROR]   位置: 类型为com.jin.xianqu_admin.model.entity.User的变量 user
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Mantine Colors */
+  --color-primary: #0d9488;
+  /* Teal 600 */
+  --color-primary-light: #f0fdfa;
+  /* Teal 50 */
+  --color-dark: #111827;
+  --color-gray: #6b7280;
+  --color-border: #e5e7eb;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f9fafb;
+  color: var(--color-dark);
+}
+
+@layer components {
+  .mantine-input {
+    @apply w-full h-9 px-3 bg-white border border-gray-300 rounded-md text-sm text-gray-900 placeholder-gray-400 outline-none transition-all;
+  }
+
+  .mantine-input:focus {
+    @apply ring-2 ring-teal-500/20 border-teal-500 bg-white;
+  }
+
+  .mantine-select .el-input__wrapper {
+    @apply bg-white border border-gray-300 rounded-md shadow-sm px-3 !important;
+  }
+
+  .mantine-select .el-input__wrapper.is-focus {
+    @apply ring-2 ring-teal-500/20 border-teal-500 !important;
+  }
+
+  .mantine-select .el-input__inner {
+    @apply font-medium text-gray-900 !important;
+  }
+
+  /* Global Dialog & MessageBox Overrides */
+  .el-message-box {
+    @apply rounded-xl border-none shadow-2xl !important;
+    font-family: var(--font-sans) !important;
+    padding-bottom: 24px !important;
+  }
+
+  .el-message-box__header {
+    @apply pt-6 px-6 pb-2 !important;
+  }
+
+  .el-message-box__title {
+    @apply text-lg font-bold text-gray-900 !important;
+  }
+
+  .el-message-box__headerbtn {
+    @apply top-6 right-6 !important;
+  }
+
+  .el-message-box__content {
+    @apply px-6 py-2 text-gray-600 text-sm leading-relaxed !important;
+  }
+
+  .el-message-box__status {
+    @apply text-teal-500 !important;
+  }
+
+  /* Warning icon override */
+  .el-message-box__status.el-message-box-icon--warning {
+    @apply text-amber-500 !important;
+  }
+
+  .el-message-box__btns {
+    @apply px-6 pt-4 flex gap-3 justify-end flex-row-reverse !important;
+    /* row-reverse to put Primary on the right if needed, but usually Confirm is right by default. 
+       Let's stick to standard flex-end which keeps HTML order (OK Left, Cancel Right usually, or reversed?) 
+       Element Plus puts Cancel then Confirm. content-row-reverse flips them. 
+       Let's just use flex-end. */
+    @apply justify-end !important;
+  }
+
+  /* Primary Action Button */
+  .el-message-box__btns .el-button--primary {
+    @apply bg-teal-600 border-teal-600 text-white font-medium rounded-lg px-5 py-2 !important;
+    @apply hover:bg-teal-700 hover:border-teal-700 hover:shadow-lg transition-all !important;
+    margin-left: 12px !important;
+  }
+
+  /* Secondary Action Button */
+  .el-message-box__btns .el-button:not(.el-button--primary) {
+    @apply bg-white border-gray-300 text-gray-700 font-medium rounded-lg px-5 py-2 !important;
+    @apply hover:bg-gray-50 hover:text-gray-900 transition-all !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Noise Texture */
+.bg-noise {
+  position: relative;
+  background-color: #f9fafb;
+}
+
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Element Plus Variable Overrides */
+:root {
+  --el-color-primary: #0d9488;
+  --el-color-primary-light-3: #2dd4bf;
+  --el-color-primary-light-5: #5eead4;
+  --el-color-primary-light-7: #99f6e4;
+  --el-color-primary-light-8: #ccfbf1;
+  --el-color-primary-light-9: #f0fdfa;
+  --el-color-primary-dark-2: #0f766e;
+
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 4px;
+  --el-border-radius-round: 24px;
+}

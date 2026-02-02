@@ -1,0 +1,121 @@
+<view class="page">
+    <!-- Navigation Bar -->
+    <view class="custom-header-area" style="height: {{headerTotalHeight}}px;">
+        <view class="header-spacer" style="height: {{headerSpacerHeight}}px;"></view>
+        <view class="action-bar">
+            <view class="action-btn cancel" bindtap="goBack">取消</view>
+            <text class="action-title">{{ isEditMode ? '编辑失物招领' : '发布失物招领' }}</text>
+            <view class="action-btn publish {{submitting ? 'disabled' : ''}}" bindtap="submit">
+                {{ submitting ? '保存中' : (isEditMode ? '保存' : '发布') }}
+            </view>
+        </view>
+    </view>
+
+    <scroll-view class="main-content" scroll-y style="padding-top: {{headerTotalHeight}}px;">
+        <!-- Type Switcher -->
+        <view class="type-switcher">
+            <view class="switch-item {{form.type === 0 ? 'active' : ''}}" bindtap="switchType" data-type="0">
+                <text>我丢了</text>
+            </view>
+            <view class="switch-item {{form.type === 1 ? 'active' : ''}}" bindtap="switchType" data-type="1">
+                <text>我捡到</text>
+            </view>
+        </view>
+
+        <view class="form-container">
+            <!-- Item Name -->
+            <view class="form-item">
+                <text class="label">物品名称</text>
+                <input class="input" value="{{form.itemName}}" bindinput="onItemNameInput" placeholder="例如：黑色华为手机" placeholder-class="placeholder" />
+            </view>
+
+            <!-- Category -->
+            <view class="form-item">
+                <text class="label">物品分类</text>
+                <picker range="{{categories}}" bindchange="onCategoryChange">
+                    <view class="picker-val {{!form.category ? 'placeholder' : ''}}">
+                        {{ form.category || '请选择分类' }}
+                    </view>
+                </picker>
+                 <text class="arrow">></text>
+            </view>
+
+
+
+            <!-- Time -->
+            <view class="form-item">
+                <text class="label">{{ form.type === 0 ? '丢失时间' : '拾取时间' }}</text>
+                <view class="datetime-box">
+                    <picker mode="date" bindchange="onDateChange" value="{{date}}">
+                        <view class="datetime-val {{!date ? 'placeholder' : ''}}">{{ date || '日期' }}</view>
+                    </picker>
+                    <picker mode="time" bindchange="onTimeChange" value="{{time}}">
+                        <view class="datetime-val {{!time ? 'placeholder' : ''}}">{{ time || '时间' }}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <!-- Location -->
+            <view class="form-item">
+                <text class="label">{{ form.type === 0 ? '丢失地点' : '拾取地点' }}</text>
+                <input class="input" value="{{form.location}}" bindinput="onLocationInput" placeholder="请描述详细地点" />
+                <view class="map-btn" bindtap="chooseLocation">
+                    <image src="/assets/images/map-pin.png" class="map-icon"></image>
+                </view>
+            </view>
+
+            <!-- Features -->
+            <view class="form-section">
+                <text class="section-label">特征描述</text>
+                <textarea class="textarea" value="{{form.features}}" bindinput="onFeaturesInput" placeholder="描述物品的颜色、品牌、特殊标识等特征..." maxlength="500"></textarea>
+            </view>
+
+            <!-- Images -->
+            <view class="form-section">
+                <view class="section-label-row">
+                    <text class="section-label">图片上传</text>
+                    <text class="section-hint">{{ localImages.length }}/9</text>
+                </view>
+                <view class="image-grid">
+                    <view class="image-item" wx:for="{{localImages}}" wx:key="index">
+                        <image class="uploaded-img" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}"></image>
+                        <view class="delete-btn" catchtap="deleteImage" data-index="{{index}}">×</view>
+                    </view>
+                    <view class="upload-btn" bindtap="chooseImage" wx:if="{{localImages.length < 9}}">
+                        <text class="plus-icon">+</text>
+                    </view>
+                </view>
+            </view>
+
+            <view class="divider"></view>
+
+            <!-- Contact -->
+             <view class="form-item">
+                <text class="label">联系方式</text>
+                <view class="contact-box">
+                    <picker range="{{contactTypes}}" bindchange="onContactTypeChange">
+                         <view class="type-picker">
+                            <text>{{ contactTypes[contactTypeIndex] }}</text>
+                            <text class="arrow">▼</text>
+                        </view>
+                    </picker>
+                    <input class="input" value="{{form.contactInfo}}" bindinput="onContactInfoInput" placeholder="请输入号码" style="margin-left: 20rpx;" />
+                </view>
+            </view>
+
+            <block wx:if="{{isEditMode}}">
+                <view class="divider"></view>
+                <!-- Shelf Status Only -->
+                <view class="form-item" style="justify-content: space-between;">
+                    <view>
+                        <text class="label">上架状态</text>
+                        <view class="sub-label">关闭后信息将下架不可见</view>
+                    </view>
+                    <switch checked="{{form.status === 0}}" color="#2E5C35" bindchange="onShelfChange" style="transform:scale(0.8)"/>
+                </view>
+            </block>
+
+        </view>
+        <view style="height: 60rpx;"></view>
+    </scroll-view>
+</view>

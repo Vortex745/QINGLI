@@ -1,0 +1,150 @@
+<view class="container">
+  <!-- Custom Navigation Bar -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-content">
+      <view class="circle-btn" bindtap="goBack">
+        <image src="/assets/images/chevron-left.png" class="nav-icon"></image>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="main-scroll" style="padding-top: {{statusBarHeight + 44}}px;" wx:if="{{post.id}}">
+    <!-- 1. User Info Header -->
+    <view class="seller-header">
+      <view class="seller-left">
+        <image src="{{post.fullUserAvatar}}" mode="aspectFill" class="seller-avatar" bindtap="navToProfile"></image>
+        <view class="seller-info" bindtap="navToProfile">
+          <text class="seller-name">{{post.userNickname || '闲趣用户'}}</text>
+          <text class="seller-meta">{{post.timeAgo}}</text>
+        </view>
+      </view>
+      <view class="follow-btn {{isFollowed ? 'followed' : ''}}" bindtap="toggleFollowUser">
+        {{ isFollowed ? '已关注' : '关注' }}
+      </view>
+    </view>
+
+    <!-- 2. Post Content -->
+    <view class="section-post">
+      <text class="post-title" wx:if="{{post.title}}">{{post.title}}</text>
+      <text class="post-text" user-select>{{post.content}}</text>
+      
+      <!-- Images Grid -->
+      <view class="image-grid" wx:if="{{post.fullImageUrls && post.fullImageUrls.length > 0}}">
+        <block wx:for="{{post.fullImageUrls}}" wx:key="*this">
+          <image 
+            src="{{item}}" 
+            mode="aspectFill" 
+            class="grid-img {{post.fullImageUrls.length === 1 ? 'large' : ''}}" 
+            bindtap="previewImage" 
+            data-url="{{item}}">
+          </image>
+        </block>
+      </view>
+    </view>
+    
+    <!-- 3. Stats Row -->
+    <view class="stats-row">
+      <view class="stats-left">
+        <text>{{ post.viewCount || 0 }}浏览</text>
+      </view>
+    </view>
+
+    <!-- 4. Comments Section -->
+    <view class="section-comments">
+      <view class="comment-header">
+        <text class="comment-title">全部评论 ({{comments.length}})</text>
+      </view>
+      
+      <view wx:if="{{comments.length > 0}}" class="comment-list">
+        <block wx:for="{{comments}}" wx:key="id">
+          <view class="comment-item">
+            <image src="{{item.fullAvatarUrl}}" mode="aspectFill" class="comment-avatar" bindtap="navToCommentProfile" data-userid="{{item.userId}}"></image>
+            <view class="comment-body">
+              <view class="comment-user-row">
+                <text class="comment-user">{{item.nickname}}</text>
+                <text class="seller-tag" wx:if="{{post.userId == item.userId}}">发布者</text>
+              </view>
+              <text class="comment-content">{{item.content}}</text>
+              <view class="comment-footer">
+                <text class="comment-time">{{item.createTimeStr}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:else class="comment-empty">
+        <text>首条评论由你开启~</text>
+      </view>
+    </view>
+
+    <view style="height: 120rpx;"></view>
+  </scroll-view>
+
+  <!-- Fixed Bottom Input Bar -->
+  <view class="bottom-input-bar" wx:if="{{post.id}}">
+    <view class="like-btn-wrapper" bindtap="toggleLike">
+        <image src="{{isLiked ? '/assets/images/red-heart.png' : '/assets/images/heart.png'}}" class="like-icon-large"></image>
+        <text class="like-text-label">{{isLiked ? '已点赞' : '点赞'}}</text>
+    </view>
+    <view class="like-btn-wrapper" bindtap="contact">
+        <image src="/assets/images/chat-1-line.png" class="like-icon-large"></image>
+        <text class="like-text-label">咨询</text>
+    </view>
+    <view class="like-btn-wrapper" bindtap="showReportModalHandler">
+        <image src="/assets/images/attention.png" class="like-icon-large"></image>
+        <text class="like-text-label">举报</text>
+    </view>
+    <view class="input-wrapper">
+        <input 
+          type="text" 
+          value="{{commentText}}" 
+          bindinput="onCommentInput"
+          placeholder="发布评论..." 
+          class="bar-input"
+          cursor-spacing="20"
+          bindconfirm="submitComment"
+        />
+    </view>
+    <view class="send-btn-small" bindtap="submitComment">发送</view>
+  </view>
+
+  <!-- Report Modal -->
+  <view class="report-modal-mask" wx:if="{{showReportModal}}" bindtap="hideReportModal"></view>
+  <view class="report-modal {{showReportModal ? 'show' : ''}}">
+    <view class="report-header">
+      <text class="report-title">举报内容</text>
+      <view class="report-close" bindtap="hideReportModal">×</view>
+    </view>
+    <view class="report-body">
+      <view class="report-section">
+        <text class="report-label">举报类型</text>
+        <view class="report-types">
+          <view 
+            class="report-type-item {{reportType === item.value ? 'active' : ''}}" 
+            wx:for="{{reportTypes}}" 
+            wx:key="value"
+            bindtap="selectReportType"
+            data-value="{{item.value}}"
+          >
+            {{item.label}}
+          </view>
+        </view>
+      </view>
+      <view class="report-section">
+        <text class="report-label">举报理由</text>
+        <textarea 
+          class="report-textarea" 
+          placeholder="请详细描述举报理由，以便我们更好地处理..."
+          value="{{reportReason}}"
+          bindinput="onReportReasonInput"
+          maxlength="200"
+        ></textarea>
+        <text class="report-count">{{reportReason.length}}/200</text>
+      </view>
+    </view>
+    <view class="report-footer">
+      <view class="report-btn cancel" bindtap="hideReportModal">取消</view>
+      <view class="report-btn submit" bindtap="submitReport">提交举报</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,104 @@
+<scroll-view 
+    scroll-y 
+    class="page-scroll" 
+    refresher-enabled="{{true}}"
+    refresher-threshold="{{60}}"
+    refresher-default-style="none"
+    refresher-triggered="{{triggered}}"
+    bindrefresherrefresh="onRefresh"
+>
+  <!-- Custom Refresher -->
+  <view slot="refresher" class="refresh-container">
+    <image src="/assets/images/Rotate.png" class="refresh-icon {{triggered ? 'rotating' : ''}}"></image>
+  </view>
+
+  <view class="page">
+    <!-- User Header -->
+    <view class="user-header">
+        <view class="user-info-row" bindtap="goProfile">
+            <image class="avatar" src="{{userInfo.fullAvatarUrl || '/assets/images/avatar_default.png'}}" mode="aspectFill"></image>
+            <view class="info-content">
+                <text class="username">{{ (!userInfo.nickname || userInfo.nickname === '微信用户') ? '点击登录' : userInfo.nickname }}</text>
+                <text class="user-id" wx:if="{{userInfo.id && userInfo.nickname !== '微信用户'}}">ID: {{ userInfo.id }}</text>
+                <text class="user-id" wx:else>登录解锁更多功能</text>
+                <text class="user-bio" wx:if="{{userInfo.bio}}">{{userInfo.bio}}</text>
+            </view>
+            <view class="arrow-right" wx:if="{{userInfo.id}}">
+               <text class="arrow">›</text>
+            </view>
+        </view>
+
+        <!-- Stats Row -->
+        <view class="stats-row">
+            <view class="stat-item" bindtap="navTo" data-url="/pages/mine/published/index">
+                <text class="stat-num">{{ stats.publishedCount || 0 }}</text>
+                <text class="stat-label">我发布的</text>
+            </view>
+            <view class="stat-item" bindtap="navTo" data-url="/pages/mine/favorites/index">
+                <text class="stat-num">{{ stats.favoriteCount || 0 }}</text>
+                <text class="stat-label">收藏夹</text>
+            </view>
+            <view class="stat-item" bindtap="navTo" data-url="/pages/user/follow-list/index?type=0&userId={{userInfo.id}}">
+                <text class="stat-num">{{ stats.followingCount || 0 }}</text>
+                <text class="stat-label">关注</text>
+            </view>
+            <view class="stat-item" bindtap="navTo" data-url="/pages/user/follow-list/index?type=1&userId={{userInfo.id}}">
+                <text class="stat-num">{{ stats.followerCount || 0 }}</text>
+                <text class="stat-label">粉丝</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- More Services -->
+    <view class="section-card">
+        <view class="card-header">
+            <text class="card-title">更多服务</text>
+        </view>
+
+        <view class="menu-list">
+            <!-- Message Center -->
+            <view class="menu-item" hover-class="item-hover" bindtap="navTo" data-url="/pages/message/index">
+                <view class="item-left">
+                    <view class="menu-icon-box bg-purple-light">
+                        <image class="menu-icon" src="/assets/images/chat-1-line.png"></image>
+                    </view>
+                    <text class="menu-text">消息中心</text>
+                </view>
+                <text class="arrow">›</text>
+            </view>
+
+             <!-- History -->
+            <view class="menu-item" hover-class="item-hover" bindtap="navTo" data-url="/pages/mine/history/index">
+                <view class="item-left">
+                    <view class="menu-icon-box bg-orange-light">
+                        <image class="menu-icon" src="/assets/images/history.png"></image>
+                    </view>
+                    <text class="menu-text">浏览记录</text>
+                </view>
+                <text class="arrow">›</text>
+            </view>
+            <!-- About Us -->
+            <view class="menu-item" hover-class="item-hover" bindtap="navTo" data-url="/pages/user/about/index">
+                <view class="item-left">
+                    <view class="menu-icon-box bg-blue-light">
+                        <image class="menu-icon" src="/assets/images/info.png"></image>
+                    </view>
+                    <text class="menu-text">关于我们</text>
+                </view>
+                <text class="arrow">›</text>
+            </view>
+            
+            <!-- Logout -->
+            <view class="menu-item" hover-class="item-hover" bindtap="handleLogoutAction" wx:if="{{userInfo.id}}">
+                <view class="item-left">
+                    <view class="menu-icon-box bg-red-light">
+                        <image class="menu-icon" src="/assets/images/exit.png"></image>
+                    </view>
+                    <text class="menu-text logout-text">退出登录</text>
+                </view>
+                <text class="arrow">›</text>
+            </view>
+        </view>
+    </view>
+  </view>
+</scroll-view>

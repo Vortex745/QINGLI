@@ -1,0 +1,58 @@
+<view class="page">
+    <!-- Custom Header -->
+    <view class="custom-header" style="height: {{headerTotalHeight}}px;">
+        <view class="status-bar" style="height: {{statusBarHeight}}px;"></view>
+        <view class="nav-bar">
+            <view class="back-btn" bindtap="goBack">
+                <text class="arrow-left">❮</text>
+            </view>
+            <view class="nav-title">{{title}}</view>
+        </view>
+    </view>
+
+    <!-- Content Area Padding -->
+    <view style="height: {{headerTotalHeight}}px;"></view>
+
+    <!-- Tabs -->
+    <view class="tabs-wrapper" style="top: {{headerTotalHeight}}px;">
+        <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+            <text class="tab-text">关注 {{followCount || ''}}</text>
+            <view class="active-line" wx:if="{{currentTab === 0}}"></view>
+        </view>
+        <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+            <text class="tab-text">粉丝 {{fanCount || ''}}</text>
+            <view class="active-line" wx:if="{{currentTab === 1}}"></view>
+        </view>
+    </view>
+
+    <!-- List -->
+    <view class="user-list">
+        <!-- Empty State -->
+        <!-- Empty State -->
+        <view class="empty-state" wx:if="{{!loading && list.length === 0}}">
+            <image class="empty-icon" src="/assets/images/add.png" mode="aspectFit"></image>
+            <text class="empty-text" wx:if="{{currentTab === 0}}">去发现有趣的人吧</text>
+            <text class="empty-text" wx:if="{{currentTab === 1}}">等你发光的那一刻</text>
+        </view>
+
+        <view class="user-item" wx:for="{{list}}" wx:key="id" bindtap="goProfile" data-id="{{item.id}}">
+            <image class="avatar" src="{{item.fullAvatarUrl}}" mode="aspectFill"></image>
+            <view class="info">
+                <view class="name-row">
+                    <text class="nickname">{{item.nickname}}</text>
+                    <!-- <image class="gender-icon" src="/assets/images/{{item.gender === 1 ? 'male' : 'female'}}.png" wx:if="{{item.gender}}"></image> -->
+                </view>
+                <text class="bio">{{item.bio || '这个人很懒，什么都没写~'}}</text>
+            </view>
+            
+            <!-- Button -->
+            <view class="action-btn {{item.btnClass}}" catchtap="handleAction" data-item="{{item}}" data-index="{{index}}">
+                <text>{{item.btnText}}</text>
+            </view>
+        </view>
+
+        <view class="loading-state" wx:if="{{loading}}">
+            <text>加载中...</text>
+        </view>
+    </view>
+</view>

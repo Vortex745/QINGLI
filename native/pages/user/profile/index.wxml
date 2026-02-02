@@ -1,0 +1,165 @@
+<scroll-view 
+    scroll-y 
+    class="page-scroll" 
+    refresher-enabled="{{true}}"
+    refresher-threshold="{{60}}"
+    refresher-default-style="none"
+    refresher-triggered="{{triggered}}"
+    bindrefresherrefresh="onRefresh"
+    bindscrolltolower="onScrollToLower"
+    bindscroll="onPageScroll"
+>
+  <!-- Custom Refresher -->
+  <view slot="refresher" class="refresh-container">
+    <image src="/assets/images/Rotate.png" class="refresh-icon {{triggered ? 'rotating' : ''}}"></image>
+  </view>
+
+  <view class="page">
+    <!-- Custom Navigation Bar -->
+    <view class="nav-top-mask"></view>
+    <view class="nav-bar" style="padding-top: {{statusBarHeight}}px; height: {{navBarHeight}}px; background: rgba(255,255,255,{{opacity}})">
+      <view class="nav-back" bindtap="goBack">
+        <view class="back-arrow" style="border-color: {{opacity > 0.5 ? '#000' : '#fff'}}"></view>
+      </view>
+      <text class="nav-title" style="opacity: {{opacity}}; color: {{opacity > 0.5 ? '#000' : '#fff'}}">{{userInfo.nickname}}</text>
+    </view>
+
+    <!-- Header -->
+    <view class="header-section">
+        <image class="bg-image" src="{{userInfo.fullBgImage}}" mode="aspectFill" wx:if="{{userInfo.fullBgImage}}"></image>
+        <view class="bg-default" wx:else></view>
+        <view class="bg-mask"></view>
+
+        <view class="user-info-box">
+            <view class="avatar-row">
+                <image class="avatar" src="{{userInfo.fullAvatarUrl || '/assets/images/avatar_default.png'}}" mode="aspectFill"></image>
+                <view class="action-box">
+                    <block wx:if="{{isMe}}">
+                        <view class="btn-edit" bindtap="goEdit">编辑资料</view>
+                    </block>
+                    <block wx:else>
+                        <view class="btn-follow {{isFollowed ? 'followed' : ''}}" bindtap="handleFollow">{{isFollowed ? '已关注' : '关注'}}</view>
+                        <!-- <view class="btn-chat" bindtap="goChat" style="margin-left: 20rpx;">私信</view> -->
+                    </block>
+                </view>
+            </view>
+            
+            <view class="main-info">
+                <text class="nickname">{{userInfo.nickname || '未设置昵称'}}</text>
+                <text class="user-id">ID: {{userInfo.id || '-'}}</text>
+                <text class="bio">{{userInfo.bio || '这个人很懒，什么都没有写~'}}</text>
+            </view>
+            
+            <view class="stats-row">
+               <view class="stat-item">
+                   <text class="num">{{stats.followingCount || 0}}</text>
+                   <text class="label">关注</text>
+               </view>
+               <view class="stat-item">
+                   <text class="num">{{stats.followerCount || 0}}</text>
+                   <text class="label">粉丝</text>
+               </view>
+               <view class="stat-item">
+                   <text class="num">{{stats.likeCount || 0}}</text>
+                   <text class="label">获赞</text>
+               </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- Content Section -->
+    <view class="content-section">
+        <view class="tabs">
+            <view class="tab {{currentTab === index ? 'active' : ''}}" 
+                  wx:for="{{['动态', '闲置', '兼职', '失物']}}" 
+                  wx:key="*this"
+                  bindtap="switchTab" 
+                  data-index="{{index}}">
+                {{item}}
+            </view>
+        </view>
+
+        <view class="list-container">
+            <view class="empty-wrap" wx:if="{{!loading && list.length === 0}}">
+                <image class="empty-img" src="{{emptyConfig[currentTab].icon}}" mode="aspectFit"></image>
+                <view class="empty-tip">{{emptyConfig[currentTab].tip}}</view>
+            </view>
+            
+            <!-- 动态 (Post) -->
+            <view class="post-list" wx:if="{{currentTab === 0}}">
+               <view class="card post-card" wx:for="{{list}}" wx:key="id" bindtap="navToDetail" data-id="{{item.id}}" data-type="5">
+                   <view class="card-top">
+                       <view class="title-area">
+                           <text class="tag-main">动态</text>
+                           <text class="card-title">{{item.displayTitle}}</text>
+                       </view>
+                   </view>
+                   <view class="card-imgs" wx:if="{{item.fullImages && item.fullImages.length}}">
+                        <image wx:for="{{item.fullImages}}" wx:for-item="img" wx:key="*this" src="{{img}}" mode="aspectFill" class="card-image"></image>
+                   </view>
+                   <view class="card-footer">
+                       <text class="footer-left">{{item.displayTime}} · {{item.location || '校园'}}</text>
+                       <text class="footer-right">{{item.statInfo}}</text>
+                   </view>
+               </view>
+            </view>
+
+            <!-- 闲置 (Goods) -->
+            <view class="goods-list" wx:if="{{currentTab === 1}}">
+                 <view class="card goods-card" wx:for="{{list}}" wx:key="id" bindtap="navToDetail" data-id="{{item.id}}" data-type="1">
+                     <view class="card-top">
+                         <view class="title-area">
+                             <text class="tag-main">闲置</text>
+                             <text class="card-title">{{item.displayTitle}}</text>
+                         </view>
+                     </view>
+                     <image class="card-image" src="{{item.displayImage}}" mode="aspectFill" wx:if="{{item.displayImage}}"></image>
+                     <view class="card-footer">
+                         <text class="footer-left">{{item.displayTime}} · {{item.location || '校区'}}</text>
+                         <text class="salary-text">¥{{item.displayPrice}}</text>
+                     </view>
+                 </view>
+            </view>
+            
+            <!-- 兼职 (Job) -->
+            <view class="job-list" wx:if="{{currentTab === 2}}">
+                 <view class="card job-card" wx:for="{{list}}" wx:key="id" bindtap="navToDetail" data-id="{{item.id}}" data-type="7">
+                     <view class="card-top">
+                         <view class="title-area">
+                             <text class="card-title">{{item.displayTitle}}</text>
+                         </view>
+                         <text class="salary-text">{{item.salary || '面议'}}</text>
+                     </view>
+                     <view class="card-desc">{{item.content}}</view>
+                     <view class="card-footer">
+                         <view class="footer-right">
+                             <text class="tag-hiring">招聘中</text>
+                         </view>
+                         <text class="view-count">浏览 {{item.viewCount || 0}}</text>
+                     </view>
+                 </view>
+            </view>
+
+            <!-- 失物招领 (Lost) -->
+            <view class="lost-list" wx:if="{{currentTab === 3}}">
+                 <view class="card lost-card" wx:for="{{list}}" wx:key="id" bindtap="navToDetail" data-id="{{item.id}}" data-type="6">
+                     <view class="card-top">
+                         <view class="title-area">
+                             <text class="tag-main">{{item.type === 1 ? '招领' : '失物'}}</text>
+                             <text class="card-title">{{item.displayTitle}}</text>
+                         </view>
+                     </view>
+                     <view class="card-desc">{{item.features || item.description || ''}}</view>
+                     <image class="card-image" src="{{item.displayImage}}" mode="aspectFill" wx:if="{{item.displayImage}}"></image>
+                     <view class="card-footer">
+                         <text class="footer-left">{{item.displayTime}} · {{item.location || '校园'}}</text>
+                     </view>
+                 </view>
+            </view>
+
+            <!-- End of list -->
+            <view class="on-end" wx:if="{{list.length > 0 && !hasMore}}">已经到底啦</view>
+        </view>
+    </view>
+  </view>
+</scroll-view>

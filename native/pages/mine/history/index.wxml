@@ -1,0 +1,69 @@
+<view class="page">
+    <!-- Custom Header -->
+    <view class="custom-header" style="height: {{headerTotalHeight}}px;">
+        <view class="status-bar" style="height: {{statusBarHeight}}px;"></view>
+        <view class="nav-bar">
+            <view class="back-btn" bindtap="goBack">
+                <text class="arrow-left">❮</text>
+            </view>
+            <view class="nav-title">浏览记录</view>
+             <view class="clear-btn" bindtap="clearHistory" wx:if="{{list.length > 0}}">
+                <text>清空</text>
+            </view>
+        </view>
+        
+        <!-- Tabs -->
+        <view class="tabs-header">
+            <view class="tab-item {{currentTab === item.id ? 'active' : ''}}" 
+                  wx:for="{{tabs}}" wx:key="id" 
+                  bindtap="switchTab" data-id="{{item.id}}">
+                <text class="tab-text">{{item.name}}</text>
+                <view class="active-line" wx:if="{{currentTab === item.id}}"></view>
+            </view>
+        </view>
+    </view>
+
+    <!-- Content Area Padding -->
+    <view style="height: {{headerTotalHeight}}px;"></view>
+
+    <!-- List Content -->
+    <view class="content-list">
+        <!-- Empty State -->
+        <view class="empty-state" wx:if="{{!loading && list.length === 0}}">
+            <image class="empty-icon" src="/assets/images/history.png" mode="aspectFit"></image>
+            <text class="empty-text">暂无浏览记录</text>
+        </view>
+
+        <!-- Unified Card Style -->
+        <view class="history-card" wx:for="{{list}}" wx:key="uniqueKey" 
+              bindtap="goDetail" data-item="{{item}}">
+            <!-- Cover Image (hide if empty) -->
+            <image class="card-cover" src="{{item.coverImage}}" mode="aspectFill" wx:if="{{item.coverImage}}"></image>
+            
+            <view class="card-info">
+                <view class="card-header">
+                    <text class="card-title">{{item.title}}</text>
+                    <text class="card-type-tag {{item.typeClass}}">{{item.typeLabel}}</text>
+                </view>
+                <text class="card-desc">{{item.description}}</text>
+                <view class="card-footer">
+                    <view class="price-box" wx:if="{{item.price}}">
+                        <text class="currency">¥</text>
+                        <text class="price">{{item.price}}</text>
+                    </view>
+                    <view class="user-info" wx:if="{{item.userName}}">
+                        <image class="user-avatar" src="{{item.userAvatar}}" mode="aspectFill"></image>
+                        <text class="user-name">{{item.userName}}</text>
+                    </view>
+                    <text class="card-time">{{item.timeText}}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="footer-end" wx:if="{{list.length > 0}}">
+            <view class="end-line"></view>
+            <text class="end-text">仅展示最近 50 条记录</text>
+            <view class="end-line"></view>
+        </view>
+    </view>
+</view>

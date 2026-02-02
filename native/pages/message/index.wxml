@@ -1,0 +1,76 @@
+<!-- pages/message/index.wxml -->
+<view class="container">
+  <!-- Tabs -->
+  <view class="tabs">
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="changeTab" data-index="{{0}}">
+      <text>私信</text>
+      <view class="tab-dot" wx:if="{{unreadPrivate > 0}}"></view>
+      <view class="active-line" wx:if="{{currentTab === 0}}"></view>
+    </view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="changeTab" data-index="{{1}}">
+      <text>系统通知</text>
+      <view class="tab-dot" wx:if="{{unreadSystem > 0}}"></view>
+      <view class="active-line" wx:if="{{currentTab === 1}}"></view>
+    </view>
+  </view>
+
+  <!-- Content -->
+  <view class="content">
+    <!-- Chat Sessions -->
+    <block wx:if="{{currentTab === 0}}">
+      <view wx:if="{{sessions.length > 0}}" class="session-list">
+        <block wx:for="{{sessions}}" wx:key="index">
+            <view class="session-item" bindtap="toChat" data-item="{{item}}">
+                <view class="avatar-wrap">
+                    <image src="{{item.fullAvatar || '/assets/images/logo.png'}}" class="avatar" binderror="handleAvatarError" data-index="{{index}}"></image>
+                    <view class="badge" wx:if="{{item.unreadCount > 0}}">{{item.unreadCount}}</view>
+                </view>
+                <view class="session-info">
+                    <view class="info-top">
+                        <text class="nickname">{{item.otherUserName}}</text>
+                        <text class="time">{{item.timeStr}}</text>
+                    </view>
+                    <text class="last-msg">{{item.lastContent}}</text>
+                </view>
+            </view>
+        </block>
+      </view>
+      <view wx:else class="empty-state">
+        <image src="/assets/images/delete.png" mode="widthFix" class="empty-img" style="width: 240rpx; margin-bottom: 20rpx;"></image>
+        <text style="color: #999; font-size: 26rpx;">暂无私信</text>
+      </view>
+    </block>
+
+    <!-- System Notices -->
+    <block wx:else>
+      <view wx:if="{{systemNotices.length > 0}}" class="notice-list">
+        <block wx:for="{{systemNotices}}" wx:key="id">
+            <!-- ... existing notice item ... -->
+            <view class="notice-item" bindtap="viewNoticeDetail" data-item="{{item}}">
+                <view class="notice-time">{{item.timeStr}}</view>
+                <view class="notice-card {{item.isRead === 0 ? 'unread' : ''}}">
+                    <view class="card-header">
+                        <image src="/assets/images/system_notice_icon.png" class="system-icon"></image>
+                        <text class="system-name">系统通知</text>
+                        <view class="unread-dot" wx:if="{{item.isRead === 0}}"></view>
+                    </view>
+                    <view class="card-title" wx:if="{{item.parsedTitle}}">{{item.parsedTitle}}</view>
+                    <view class="card-content">{{item.parsedBody}}</view>
+                    <view class="card-arrow">
+                        <text class="arrow-text">查看详情</text>
+                        <view class="arrow-icon"></view>
+                    </view>
+                </view>
+            </view>
+        </block>
+      </view>
+      <view wx:elif="{{loading}}" class="loading-state">
+         <text>加载中...</text>
+      </view>
+      <view wx:else class="empty-state">
+         <image src="/assets/images/notification.png" mode="widthFix" class="empty-img" style="width: 240rpx; margin-bottom: 20rpx;"></image>
+         <text style="color: #999; font-size: 26rpx;">暂无系统通知</text>
+      </view>
+    </block>
+  </view>
+</view>

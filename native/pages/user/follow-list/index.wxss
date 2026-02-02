@@ -1,0 +1,192 @@
+/** pages/user/follow-list/index.wxss **/
+.page {
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.custom-header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.status-bar { width: 100%; }
+
+.nav-bar {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 16px;
+}
+
+.back-btn {
+    position: absolute;
+    left: 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.back-btn:active { opacity: 0.7; }
+
+.nav-title {
+    font-size: 34rpx;
+    font-weight: 600;
+    color: #1A1A1A;
+}
+
+/* Tabs */
+.tabs-wrapper {
+    display: flex;
+    height: 88rpx;
+    background: #fff;
+    position: sticky;
+    z-index: 99;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.tab-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 30rpx;
+    color: #999;
+    transition: all 0.3s;
+}
+
+.tab-item.active {
+    color: #333;
+    font-weight: 600;
+    font-size: 32rpx;
+}
+
+.active-line {
+    position: absolute;
+    bottom: 0;
+    width: 40rpx;
+    height: 6rpx;
+    background: #2E5C35;
+    border-radius: 3rpx;
+}
+
+/* List */
+.user-list {
+    padding: 0 32rpx;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 32rpx 0;
+    border-bottom: 1rpx solid #f9f9f9;
+}
+
+.avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    margin-right: 24rpx;
+    background: #eee;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20rpx;
+    min-width: 0; /* for truncation */
+}
+
+.name-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rpx;
+}
+
+.nickname {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bio {
+    font-size: 26rpx;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Buttons */
+.action-btn {
+    padding: 12rpx 32rpx;
+    border-radius: 32rpx;
+    font-size: 26rpx;
+    font-weight: 500;
+    text-align: center;
+    min-width: 120rpx;
+    transition: all 0.2s;
+}
+
+/* 状态样式 */
+/* 未关注/回关 */
+.btn-primary {
+    background: #2E5C35;
+    color: #fff;
+}
+
+/* 已关注/互粉 (Outline style) */
+.btn-outline {
+    background: #fff;
+    border: 1rpx solid #ccc;
+    color: #999;
+}
+
+.action-btn:active {
+    transform: scale(0.95);
+    opacity: 0.9;
+}
+
+/* Empty State */
+.empty-state {
+    padding: 100rpx 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-icon {
+    width: 120rpx;
+    height: 120rpx;
+    opacity: 0.2;
+    margin-bottom: 20rpx;
+}
+
+.empty-text {
+    color: #ccc;
+    font-size: 28rpx;
+}
+
+.loading-state {
+    text-align: center;
+    padding: 20rpx;
+    color: #999;
+    font-size: 24rpx;
+}

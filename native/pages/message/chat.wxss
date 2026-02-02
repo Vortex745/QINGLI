@@ -1,0 +1,277 @@
+/** pages/message/chat.wxss **/
+.container {
+  height: 100vh;
+  background-color: #F5F7FA;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Context (Glassmorphism) */
+.header {
+  position: relative;
+  z-index: 50;
+}
+
+.goods-context {
+  height: 110rpx;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(0,0,0,0.05);
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.02);
+}
+
+.goods-img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 12rpx;
+  background: #eee;
+  flex-shrink: 0;
+  border: 1rpx solid rgba(0,0,0,0.05);
+}
+
+.goods-info {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.goods-name {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.goods-price {
+  color: #FF4D4F;
+  font-weight: bold;
+  font-size: 28rpx;
+  margin-top: 4rpx;
+}
+
+.send-goods-btn {
+  background: rgba(46, 92, 53, 0.08); /* Soft green pill */
+  border: 1rpx solid rgba(46, 92, 53, 0.2);
+  color: #2E5C35;
+  padding: 10rpx 24rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.send-goods-btn:active {
+  background: rgba(12, 86, 125, 0.2);
+  transform: scale(0.96);
+}
+
+/* Chat Area */
+.chat-area {
+  flex: 1;
+  padding: 24rpx 0;
+  overflow-y: hidden; /* ScrollView handles scroll */
+}
+
+.msg-list {
+  padding: 0 32rpx 40rpx;
+}
+
+.msg-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  align-items: flex-start;
+  animation: fadeInUp 0.3s ease backwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+  border: 2rpx solid #fff;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
+}
+
+.msg-content {
+  max-width: 72%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text Bubble Styles */
+.text-content {
+  display: inline-block;
+  padding: 20rpx 28rpx;
+  font-size: 30rpx;
+  line-height: 1.6;
+  position: relative;
+  word-break: break-all;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+
+/* Other User Bubble */
+.msg-item .text-content {
+  background: #fff;
+  color: #1F2937; /* Gray-900 */
+  border-radius: 24rpx;
+  border-top-left-radius: 4rpx;
+}
+
+/* Self Bubble */
+.msg-item.self {
+  flex-direction: row-reverse;
+}
+
+.msg-item.self .msg-content {
+  margin-left: 0;
+  margin-right: 20rpx;
+  align-items: flex-end;
+}
+
+.msg-item.self .text-content {
+  background: linear-gradient(135deg, #2E5C35 0%, #3D7A46 100%);
+  color: #fff;
+  border-radius: 24rpx;
+  border-top-right-radius: 4rpx;
+  box-shadow: 0 4rpx 12rpx rgba(46, 92, 53, 0.25);
+}
+
+/* Image Content */
+.img-content {
+  max-width: 100%;
+  border-radius: 16rpx;
+  border: 4rpx solid #fff;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+}
+
+/* Goods Card inside Chat */
+.card-content {
+  background: #F1F7F2;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(46, 92, 53, 0.15);
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #2E5C35; /* Primary Green */
+  font-size: 28rpx;
+  margin-bottom: 6rpx;
+}
+
+.card-desc {
+  font-size: 22rpx;
+  color: #64748B;
+}
+
+/* Input Area */
+.input-area {
+  min-height: 110rpx;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 16rpx 24rpx;
+  border-top: 1rpx solid rgba(0,0,0,0.05);
+  /* Safe area handling */
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.02);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.emoji-icon {
+  font-size: 48rpx;
+  margin-right: 24rpx;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.emoji-icon:active {
+  transform: scale(0.9);
+}
+
+.input-box {
+  flex: 1;
+  height: 80rpx;
+  background: #F1F5F9; /* Slate 100 */
+  border-radius: 40rpx;
+  padding: 0 32rpx;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+  color: #333;
+}
+
+.send-btn {
+  background: #2E5C35;
+  color: #fff;
+  padding: 0 32rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  border-radius: 36rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  flex-shrink: 0;
+  box-shadow: 0 4rpx 10rpx rgba(46, 92, 53, 0.3);
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+.send-btn.disabled {
+  background: #E2E8F0;
+  color: #94A3B8;
+  box-shadow: none;
+  opacity: 1; 
+}
+
+/* Emoji Panel */
+.emoji-panel {
+  height: 400rpx;
+  background: #F1F5F9;
+  border-top: 1rpx solid rgba(0,0,0,0.05);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx 10rpx;
+}
+
+.emoji-item {
+  width: 12.5%; /* 8 cols */
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42rpx;
+  border-radius: 12rpx;
+}
+
+.emoji-item:active {
+  background: rgba(0,0,0,0.05);
+}

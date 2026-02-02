@@ -1,0 +1,100 @@
+<view class="page">
+    <!-- Navigation Bar -->
+    <view class="custom-header-area" style="height: {{headerTotalHeight}}px;">
+        <view class="header-spacer" style="height: {{headerSpacerHeight}}px;"></view>
+        <view class="action-bar">
+            <view class="action-btn cancel" bindtap="goBack">取消</view>
+            <text class="action-title">{{ isEditMode ? '编辑闲置' : '发布闲置' }}</text>
+            <view class="action-btn publish {{submitting ? 'disabled' : ''}}" bindtap="submit">
+                {{ submitting ? '保存中' : (isEditMode ? '保存' : '发布') }}
+            </view>
+        </view>
+    </view>
+
+    <scroll-view class="main-content" scroll-y style="padding-top: {{headerTotalHeight}}px;">
+        <view class="form-container">
+            <!-- Title -->
+            <view class="form-item">
+                <text class="label">物品名称</text>
+                <input class="input" value="{{formData.name}}" bindinput="onNameInput" placeholder="品牌型号不可少" placeholder-class="placeholder" />
+            </view>
+
+            <!-- Price -->
+            <view class="form-item">
+                <text class="label">价格</text>
+                <view class="price-input-box">
+                    <text class="currency">¥</text>
+                    <input class="price-input" type="digit" value="{{formData.price}}" bindinput="onPriceInput" placeholder="0.00" placeholder-class="placeholder" />
+                </view>
+            </view>
+            
+             <!-- Original Price -->
+            <view class="form-item">
+                <text class="label">原价</text>
+                <view class="price-input-box">
+                    <text class="currency original">¥</text>
+                    <input class="price-input original" type="digit" value="{{formData.originalPrice}}" bindinput="onOriginalPriceInput" placeholder="选填" placeholder-class="placeholder" />
+                </view>
+            </view>
+
+             <!-- Category -->
+            <view class="form-item">
+                <text class="label">分类</text>
+                <picker range="{{categories}}" bindchange="onCategoryChange">
+                    <view class="picker-val {{!formData.category ? 'placeholder' : ''}}">
+                        {{ formData.category || '请选择分类' }}
+                    </view>
+                </picker>
+                <text class="arrow">></text>
+            </view>
+
+             <!-- Condition -->
+            <view class="form-item">
+                <text class="label">成色</text>
+                <picker range="{{conditions}}" bindchange="onConditionChange">
+                    <view class="picker-val {{!formData.condition ? 'placeholder' : ''}}">
+                        {{ formData.condition || '请选择成色' }}
+                    </view>
+                </picker>
+                 <text class="arrow">></text>
+            </view>
+
+
+
+            <!-- Description -->
+            <view class="form-section">
+                <text class="section-label">物品描述</text>
+                <textarea class="textarea" value="{{formData.description}}" bindinput="onDescriptionInput" placeholder="描述宝贝的转手原因、入手渠道和使用感受..." maxlength="500"></textarea>
+            </view>
+
+             <!-- Images -->
+            <view class="form-section">
+                <view class="section-label-row">
+                    <text class="section-label">图片上传</text>
+                    <text class="section-hint">{{ imageList.length }}/9</text>
+                </view>
+                <view class="image-grid">
+                    <view class="image-item" wx:for="{{imageList}}" wx:key="index">
+                        <image class="uploaded-img" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}"></image>
+                        <view class="delete-btn" catchtap="deleteImage" data-index="{{index}}">×</view>
+                    </view>
+                    <view class="upload-btn" bindtap="chooseImage" wx:if="{{imageList.length < 9}}">
+                        <text class="plus-icon">+</text>
+                    </view>
+                </view>
+            </view>
+
+
+            <!-- Status -->
+             <view class="form-item" wx:if="{{isEditMode}}" style="justify-content: space-between;">
+                <view>
+                    <text class="label">商品状态</text>
+                    <view class="sub-label">关闭后商品将下架不可见</view>
+                </view>
+                <switch checked="{{formData.status === 0}}" color="#2E5C35" bindchange="onStatusChange" style="transform:scale(0.8)"/>
+            </view>
+
+        </view>
+        <view style="height: 60rpx;"></view>
+    </scroll-view>
+</view>

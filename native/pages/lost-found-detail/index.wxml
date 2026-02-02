@@ -1,0 +1,130 @@
+<view class="container">
+  <!-- Custom Navigation Bar -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-content">
+      <view class="circle-btn" bindtap="goBack">
+        <image src="/assets/images/chevron-left.png" class="nav-icon"></image>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="main-scroll" style="padding-top: {{statusBarHeight + 44}}px;" wx:if="{{item.id}}">
+    <!-- 1. User Info Header -->
+    <view class="seller-header">
+      <view class="seller-left">
+        <image src="{{item.fullUserAvatar}}" mode="aspectFill" class="seller-avatar" bindtap="navToProfile"></image>
+        <view class="seller-info" bindtap="navToProfile">
+          <text class="seller-name">{{item.userNickname || '闲趣用户'}}</text>
+          <text class="seller-meta">{{item.timeAgo}}</text>
+        </view>
+      </view>
+      <view class="follow-btn {{isFollowed ? 'followed' : ''}}" bindtap="toggleFollowUser">
+        {{ isFollowed ? '已关注' : '关注' }}
+      </view>
+    </view>
+
+    <!-- 2. Image Swiper (If any) -->
+    <view class="image-section" wx:if="{{item.fullImageUrls && item.fullImageUrls.length > 0}}">
+      <swiper class="image-swiper" circular indicator-dots indicator-active-color="#214D39">
+        <block wx:for="{{item.fullImageUrls}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" mode="aspectFill" class="product-img" bindtap="previewImage" data-url="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 3. Post Info -->
+    <view class="section-title-box">
+      <view class="lf-tag {{item.type === 0 ? 'tag-lost' : 'tag-found'}}">
+        {{ item.type === 0 ? '失物' : '招领' }}
+      </view>
+      <text class="item-name">{{item.itemName}}</text>
+    </view>
+
+    <!-- 3.5 Stats Row -->
+    <view class="stats-row">
+      <view class="stats-left">
+        <text>{{ item.viewCount || 0 }}浏览</text>
+      </view>
+    </view>
+
+    <!-- 4. Metadata Details -->
+    <view class="section-params">
+      <view class="detail-row">
+        <text class="detail-label">{{item.type === 0 ? '丢失时间：' : '发现时间：'}}</text>
+        <text class="detail-value">{{item.time || '暂无'}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">{{item.type === 0 ? '丢失地点：' : '发现地点：'}}</text>
+        <text class="detail-value">{{item.location || '暂无'}}</text>
+      </view>
+    </view>
+
+    <!-- 5. Features/Description -->
+    <view class="section-content">
+      <view class="section-header">
+        <text class="section-title">详情描述</text>
+      </view>
+      <text class="goods-desc" user-select>{{item.features || '暂无详细描述'}}</text>
+    </view>
+
+    <view class="spacer-large"></view>
+  </scroll-view>
+
+  <view class="bottom-bar" wx:if="{{item.id}}">
+    <view class="bar-left">
+        <view class="bar-btn" bindtap="toggleFavorite">
+            <image src="{{favorite ? '/assets/images/red-heart.png' : '/assets/images/heart.png'}}" class="bar-icon"></image>
+            <text>{{ favorite ? '已点赞' : '点赞' }}</text>
+        </view>
+        <view class="bar-btn" bindtap="showReportModalHandler">
+            <image src="/assets/images/attention.png" class="bar-icon"></image>
+            <text>举报</text>
+        </view>
+    </view>
+    <view class="bar-right">
+      <view class="buy-now-btn" bindtap="contact">{{ item.type === 0 ? '提供线索' : '联系物主' }}</view>
+    </view>
+  </view>
+
+  <!-- Report Modal -->
+  <view class="report-modal-mask" wx:if="{{showReportModal}}" bindtap="hideReportModal"></view>
+  <view class="report-modal {{showReportModal ? 'show' : ''}}">
+    <view class="report-header">
+      <text class="report-title">举报内容</text>
+      <view class="report-close" bindtap="hideReportModal">×</view>
+    </view>
+    <view class="report-body">
+      <view class="report-section">
+        <text class="report-label">举报类型</text>
+        <view class="report-types">
+          <view 
+            class="report-type-item {{reportType === item.value ? 'active' : ''}}" 
+            wx:for="{{reportTypes}}" 
+            wx:key="value"
+            bindtap="selectReportType"
+            data-value="{{item.value}}"
+          >
+            {{item.label}}
+          </view>
+        </view>
+      </view>
+      <view class="report-section">
+        <text class="report-label">举报理由</text>
+        <textarea 
+          class="report-textarea" 
+          placeholder="请详细描述举报理由，以便我们更好地处理..."
+          value="{{reportReason}}"
+          bindinput="onReportReasonInput"
+          maxlength="200"
+        ></textarea>
+        <text class="report-count">{{reportReason.length}}/200</text>
+      </view>
+    </view>
+    <view class="report-footer">
+      <view class="report-btn cancel" bindtap="hideReportModal">取消</view>
+      <view class="report-btn submit" bindtap="submitReport">提交举报</view>
+    </view>
+  </view>
+</view>

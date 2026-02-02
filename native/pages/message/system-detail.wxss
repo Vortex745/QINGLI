@@ -1,0 +1,103 @@
+.article-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 40rpx 48rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-header {
+  margin-bottom: 20rpx;
+}
+
+.article-title {
+  display: block;
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 24rpx;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.article-tag {
+  font-size: 20rpx;
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #bdf1d3;
+  font-weight: 500;
+}
+
+.article-time {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.article-divider {
+  height: 1rpx;
+  background-color: #f0f0f0;
+  margin: 30rpx 0 40rpx 0;
+}
+
+.article-content {
+  flex: 1; /* Pushes footer to bottom if content is short, or flows naturally */
+  width: 100%;
+}
+
+.content-text {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.8;
+  letter-spacing: 0.5rpx;
+  text-align: justify;
+}
+
+.article-footer {
+  margin-top: 80rpx;
+  padding-bottom: 60rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signature {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  position: relative;
+}
+
+/* Add a subtle seal/stamp effect (optional, implies official status) */
+/* .signature::before {
+  content: '';
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  border: 4rpx solid #e11d48;
+  border-radius: 50%;
+  opacity: 0.1;
+  top: -40rpx;
+  left: -40rpx;
+  transform: rotate(-15deg);
+} */
+
+.team-name {
+  font-size: 30rpx;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-family: serif; /* More formal font style */
+}
+
+.date-now {
+  font-size: 24rpx;
+  color: #666;
+  font-family: sans-serif;
+}

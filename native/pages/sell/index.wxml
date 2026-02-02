@@ -1,0 +1,58 @@
+<!-- pages/sell/index.wxml -->
+<view class="page">
+    <view class="bg-decoration"></view>
+
+    <view class="content-container">
+        <view class="greeting-area">
+            <text class="greeting-title">发布中心</text>
+            <text class="greeting-sub">记录生活，分享美好</text>
+        </view>
+
+        <!-- Action List -->
+        <view class="action-list">
+            <!-- Publish Idle -->
+            <view class="action-card" hover-class="card-hover" bindtap="navToPublish" data-type="goods">
+                <view class="icon-box">
+                    <image class="action-icon" src="/assets/images/camera-4-fill.png" style="/* tint handled via colored png in native or filter */"></image>
+                </view>
+                <view class="text-box">
+                    <text class="card-title">发布闲置</text>
+                    <text class="card-desc">闲置好物，快速回血</text>
+                </view>
+            </view>
+
+            <!-- Publish Part-time -->
+            <view class="action-card" hover-class="card-hover" bindtap="navToPublish" data-type="parttime">
+                <view class="icon-box">
+                    <image class="action-icon" src="/assets/images/briefcase.png"></image>
+                </view>
+                <view class="text-box">
+                    <text class="card-title">兼职发布</text>
+                    <text class="card-desc">校园兼职，互助共赢</text>
+                </view>
+            </view>
+
+            <!-- Publish Lost & Found -->
+            <view class="action-card" hover-class="card-hover" bindtap="navToPublish" data-type="lost">
+                <view class="icon-box">
+                    <image class="action-icon" src="/assets/images/map-pin.png"></image>
+                </view>
+                <view class="text-box">
+                    <text class="card-title">失物招领</text>
+                    <text class="card-desc">寻物启事，传递爱心</text>
+                </view>
+            </view>
+
+            <!-- Publish Square -->
+            <view class="action-card" hover-class="card-hover" bindtap="navToPublish" data-type="square">
+                <view class="icon-box">
+                    <image class="action-icon" src="/assets/images/seedling.png"></image>
+                </view>
+                <view class="text-box">
+                    <text class="card-title">校园广场</text>
+                    <text class="card-desc">校园趣事，每日动态</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

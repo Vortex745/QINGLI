@@ -1,0 +1,159 @@
+<!-- pages/square/index.wxml -->
+<view class="container">
+  <!-- Header: Search -->
+  <view class="search-container">
+    <view class="search-bar">
+      <image class="search-icon" src="/assets/images/search-line.png"></image>
+      <input class="search-input" value="{{keyword}}" bindinput="onSearchInput" bindconfirm="onSearchConfirm" placeholder="搜索话题 / 动态" placeholder-style="color: #999;" />
+    </view>
+  </view>
+
+  <!-- Sticky Tabs -->
+  <view class="sticky-header">
+    <scroll-view scroll-x="true" class="topics-wrapper" show-scrollbar="{{false}}">
+      <view class="topic-item" bindtap="switchTab" data-type="{{0}}">
+        <text class="topic-text {{currentType === 0 ? 'active-text' : ''}}">推荐</text>
+        <view class="active-indicator" wx:if="{{currentType === 0}}"></view>
+      </view>
+      <view class="topic-item" bindtap="switchTab" data-type="{{4}}">
+        <text class="topic-text {{currentType === 4 ? 'active-text' : ''}}">全部</text>
+        <view class="active-indicator" wx:if="{{currentType === 4}}"></view>
+      </view>
+      <view class="topic-item" bindtap="switchTab" data-type="{{2}}">
+        <text class="topic-text {{currentType === 2 ? 'active-text' : ''}}">兼职</text>
+        <view class="active-indicator" wx:if="{{currentType === 2}}"></view>
+      </view>
+      <view class="topic-item" bindtap="switchTab" data-type="{{3}}">
+        <text class="topic-text {{currentType === 3 ? 'active-text' : ''}}">校园广场</text>
+        <view class="active-indicator" wx:if="{{currentType === 3}}"></view>
+      </view>
+      <view class="topic-item" bindtap="switchTab" data-type="{{1}}">
+        <text class="topic-text {{currentType === 1 ? 'active-text' : ''}}">失物招领</text>
+        <view class="active-indicator" wx:if="{{currentType === 1}}"></view>
+      </view>
+    </scroll-view>
+
+    <!-- Sort Filter (v-if="currentType !== 0") -->
+    <view class="sort-filter" wx:if="{{currentType !== 0}}">
+      <view class="sort-item {{tabSorts[currentType] === 'hot' ? 'active' : ''}}" bindtap="switchSort" data-sort="hot">热度</view>
+      <view class="sort-divider">|</view>
+      <view class="sort-item {{tabSorts[currentType] === 'latest' ? 'active' : ''}}" bindtap="switchSort" data-sort="latest">最新</view>
+    </view>
+  </view>
+
+  <!-- Content Body -->
+  <view class="content-body">
+    <scroll-view 
+        scroll-y 
+        class="feed-scroll" 
+        refresher-enabled="{{true}}"
+        refresher-threshold="{{60}}"
+        refresher-default-style="none"
+        refresher-triggered="{{triggered}}"
+        bindrefresherrefresh="onRefresh"
+        bindscrolltolower="onReachBottom"
+    >
+        <!-- Custom Refresher -->
+        <view slot="refresher" class="refresh-container">
+            <image src="/assets/images/Rotate.png" class="refresh-icon {{triggered ? 'rotating' : ''}}"></image>
+        </view>
+
+        <view class="feed-list">
+          <block wx:for="{{postList}}" wx:key="id">
+            <view class="post-card" bindtap="navToDetail" data-item="{{item}}">
+              <!-- Header -->
+              <view class="post-header">
+                <image class="user-avatar" src="{{item.fullUserAvatar}}" mode="aspectFill" lazy-load catchtap="navToProfile" data-id="{{item.userId}}"></image>
+                <view class="user-info">
+                  <text class="user-name">{{item.userNickname || '匿名用户'}}</text>
+                  <view class="sub-info">
+                    <text class="post-time">{{item.timeAgo}}</text>
+                    <view class="type-tag type-{{item.type}}" wx:if="{{currentType === 0 || currentType === 4}}">
+                      {{item.type === 1 ? '失物招领' : (item.type === 2 ? '兼职' : '校园广场')}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+
+              <!-- Type 2: Job Card -->
+              <view class="post-content job-card" wx:if="{{item.type === 2}}">
+                <view class="job-header-row">
+                    <text class="job-title">{{item.title}}</text>
+                    <view class="job-salary-box">
+                        <text class="job-salary">{{item.salary}}</text>
+                    </view>
+                </view>
+                <view class="job-tags-row">
+                    <text class="job-tag" wx:if="{{item.settlementMethod}}">{{item.settlementMethod}}</text>
+                    <text class="job-tag" wx:if="{{item.recruitCount}}">招{{item.recruitCount}}人</text>
+                </view>
+                <text class="post-text job-desc" wx:if="{{item.content && item.content !== '见标题'}}">{{item.content}}</text>
+              </view>
+
+              <!-- Type 1: Lost Found Card -->
+              <view class="post-content lost-found-card" wx:elif="{{item.type === 1}}">
+                 <view class="lf-header">
+                    <view class="lf-tag {{item.subType === 0 ? 'tag-lost' : 'tag-found'}}">
+                        {{ item.subType === 0 ? '我丢了' : '我捡到' }}
+                    </view>
+                    <text class="lf-title">{{item.itemName}}</text>
+                 </view>
+                 <text class="post-text lf-desc" wx:if="{{item.features}}">{{item.features}}</text>
+                 <view class="lf-meta">
+                    <view class="lf-info-row" wx:if="{{item.time}}">
+                         <text class="lf-icon">🕒</text>
+                         <text class="lf-text">{{item.time}}</text>
+                    </view>
+                    <view class="lf-info-row" wx:if="{{item.location}}">
+                         <text class="lf-icon">📍</text>
+                         <text class="lf-text">{{item.location}}</text>
+                    </view>
+                 </view>
+              </view>
+
+              <!-- Type 3: Square Card (Default) -->
+              <view class="post-content square-card" wx:else>
+                 <text class="square-title" wx:if="{{item.title}}">{{item.title}}</text>
+                 <text class="post-text">{{item.content}}</text>
+              </view>
+
+              <!-- Images -->
+              <view class="post-images single" wx:if="{{item.type !== 2 && item.fullImageUrls && item.fullImageUrls.length > 0}}">
+                 <view class="image-wrapper">
+                     <image src="{{item.fullImageUrls[0]}}" mode="aspectFill" lazy-load class="content-img"></image>
+                 </view>
+              </view>
+
+              <!-- Footer -->
+              <view class="post-footer">
+                <view class="action-btn" wx:if="{{item.type !== 1}}">
+                    <image class="action-icon" src="/assets/images/chat-1-line.png"></image>
+                    <text class="action-count">{{item.commentCount || 0}}</text>
+                </view>
+                <view class="action-btn" catchtap="toggleLike" data-item="{{item}}">
+                     <image class="action-icon" src="{{item.favorite ? '/assets/images/red-heart.png' : '/assets/images/heart.png'}}"></image>
+                     <text class="action-count {{item.favorite ? 'count-active' : ''}}">{{item.favoriteCount || 0}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+          
+          <!-- Empty State -->
+          <view class="empty-wrap" wx:if="{{postList.length === 0 && !loading}}">
+            <image class="empty-img" src="{{emptyConfig[currentType].icon}}" mode="aspectFit"></image>
+            <view class="empty-tip">{{emptyConfig[currentType].tip}}</view>
+          </view>
+          
+          <view class="loading-state" wx:if="{{loading}}">
+             <text>加载中...</text>
+          </view>
+
+          <view class="footer-end" wx:if="{{!hasMore && postList.length > 0}}">
+            <text>— 已经到底了 —</text>
+          </view>
+
+          <view style="height: 100rpx;"></view>
+        </view>
+    </scroll-view>
+  </view>
+</view>

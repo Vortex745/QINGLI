@@ -1,0 +1,49 @@
+<!-- pages/user/about/index.wxml -->
+<view class="container">
+  <view class="about-header">
+    <view class="logo-box">
+      <image class="app-logo" src="/assets/images/logo.png" mode="aspectFit"></image>
+    </view>
+    <text class="app-name">青里</text>
+    <text class="app-version">Version 1.0.2</text>
+  </view>
+
+  <view class="content-list">
+    <view class="info-card">
+      <text class="card-title">应用简介</text>
+      <text class="card-desc">青里是一款专为校园学子打造的综合服务平台。在这里，你可以轻松置换闲置好物，分享校园动态，发现丰富的兼职机会，还能发布失物招领信息。我们致力于打造一个温暖、真实的校园互助社区。</text>
+    </view>
+
+    <view class="menu-list">
+      <view class="menu-item" bindtap="navTo" data-url="/pages/user/about/privacy">
+        <text class="menu-label">隐私政策</text>
+        <view class="arrow-box">
+          <text class="arrow">›</text>
+        </view>
+      </view>
+      <view class="menu-item" bindtap="navTo" data-url="/pages/user/about/terms">
+        <text class="menu-label">用户协议</text>
+        <view class="arrow-box">
+          <text class="arrow">›</text>
+        </view>
+      </view>
+      <view class="menu-item" bindtap="showContact">
+        <text class="menu-label">联系我们</text>
+        <view class="arrow-box">
+          <text class="arrow">›</text>
+        </view>
+      </view>
+      <view class="menu-item" bindtap="checkUpdate">
+        <text class="menu-label">检查更新</text>
+        <view class="arrow-box">
+          <text class="arrow">›</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="copyright">Copyright © 2024-2026 青里团队</text>
+    <text class="all-rights">All Rights Reserved</text>
+  </view>
+</view>

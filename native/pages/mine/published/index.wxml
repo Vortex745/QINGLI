@@ -1,0 +1,140 @@
+<view class="page">
+    <!-- Custom Header -->
+    <view class="custom-header" style="height: {{headerTotalHeight}}px;">
+        <view class="status-bar" style="height: {{statusBarHeight}}px;"></view>
+        <view class="nav-bar">
+            <view class="back-btn" bindtap="goBack">
+                <text class="arrow-left">❮</text>
+            </view>
+            <view class="nav-title">我发布的</view>
+        </view>
+    </view>
+
+    <!-- Content Area Padding -->
+    <view style="height: {{headerTotalHeight}}px;"></view>
+
+    <!-- Tabs -->
+    <view class="tabs-container" style="top: {{headerTotalHeight}}px;">
+        <view class="tabs-wrapper">
+            <view class="tab-item {{currentTab === index ? 'active' : ''}}" 
+                  wx:for="{{tabs}}" wx:key="index" 
+                  bindtap="switchTab" data-index="{{index}}">
+                <text class="tab-text">{{item}}</text>
+                <view class="active-line" wx:if="{{currentTab === index}}"></view>
+            </view>
+        </view>
+    </view>
+
+    <!-- List Content -->
+    <view class="content-list">
+        
+        <!-- Tab 0: Goods (闲置) -->
+        <block wx:if="{{currentTab === 0}}">
+            <view class="goods-card" wx:for="{{goodsList}}" wx:key="id" bindtap="onItemClick" data-item="{{item}}">
+                <image class="goods-img" src="{{item.coverImage}}" mode="aspectFill" catchtap="previewImage" data-urls="{{item.displayImages}}" data-current="{{item.coverImage}}"></image>
+                <view class="goods-info">
+                    <view class="goods-header">
+                        <text class="goods-title">{{item.name}}</text>
+                        <text class="delete-btn-text" catchtap="deleteItem" data-item="{{item}}">删除</text>
+                    </view>
+                    <view class="goods-meta">
+                        <view class="goods-price-row">
+                            <text class="price">¥{{item.price}}</text>
+                            <text class="original-price" wx:if="{{item.originalPrice}}">¥{{item.originalPrice}}</text>
+                        </view>
+                        <view class="status-tag {{item.status <= 1 ? 'status-active' : 'status-sold'}}">
+                            <text wx:if="{{item.status === 0}}">正在出售</text>
+                            <text wx:elif="{{item.status === 1}}">交易中</text>
+                            <text wx:elif="{{item.status === 2}}">已售出</text>
+                            <text wx:else>已下架</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="empty-state" wx:if="{{!loading && goodsList.length === 0}}">
+                <image src="/assets/images/box.png" class="empty-icon" mode="aspectFit"></image>
+                <text class="empty-text">暂无发布的闲置</text>
+            </view>
+        </block>
+
+        <!-- Tab 1: Square Post (动态) -->
+        <block wx:if="{{currentTab === 1}}">
+            <view class="post-card" wx:for="{{postList}}" wx:key="id" bindtap="onItemClick" data-item="{{item}}">
+                <view class="card-header">
+                     <text class="card-title">{{item.title || '快捷动态'}}</text>
+                     <text class="delete-btn-text" catchtap="deleteItem" data-item="{{item}}">删除</text>
+                </view>
+                <view class="card-content">{{item.content}}</view>
+                <scroll-view class="card-images-scroll" scroll-x wx:if="{{item.displayImages && item.displayImages.length > 0}}">
+                    <image class="scroll-img" wx:for="{{item.displayImages}}" wx:for-item="img" wx:key="*this" src="{{img}}" mode="aspectFill" catchtap="previewImage" data-urls="{{item.displayImages}}" data-current="{{img}}"></image>
+                </scroll-view>
+                 <view class="post-footer">
+                     <text class="card-time">收藏 {{item.favoriteCount || 0}} · 评论 {{item.commentCount || 0}} · {{item.createTime}}</text>
+                 </view>
+            </view>
+            <view class="empty-state" wx:if="{{!loading && postList.length === 0}}">
+                <image src="/assets/images/mail.png" class="empty-icon" mode="aspectFit"></image>
+                <text class="empty-text">暂无发布的动态</text>
+            </view>
+        </block>
+
+        <!-- Tab 2: Job (兼职) -->
+        <block wx:if="{{currentTab === 2}}">
+            <view class="post-card" wx:for="{{jobList}}" wx:key="id" bindtap="onItemClick" data-item="{{item}}">
+                 <view class="card-header">
+                     <text class="card-title">{{item.title}}</text>
+                     <view style="display:flex; flex-direction:column; align-items:flex-end;">
+                        <text class="job-salary">{{item.salary}}</text>
+                        <text class="delete-btn-text" style="margin-top:10rpx" catchtap="deleteItem" data-item="{{item}}">删除</text>
+                     </view>
+                </view>
+                 <view class="card-content">{{item.content}}</view>
+                 <view class="post-footer">
+                     <view class="status-tag {{item.status === 0 ? 'status-active' : 'status-sold'}}">
+                        {{item.status === 0 ? '热招中' : '已下架'}}
+                     </view>
+                     <text class="card-time">浏览 {{item.viewCount || 0}}</text>
+                 </view>
+            </view>
+            <view class="empty-state" wx:if="{{!loading && jobList.length === 0}}">
+                <image src="/assets/images/empty-inbox.png" class="empty-icon" mode="aspectFit"></image>
+                <text class="empty-text">暂无发布的兼职</text>
+            </view>
+        </block>
+
+        <!-- Tab 3: Lost & Found (失物招领) -->
+        <block wx:if="{{currentTab === 3}}">
+            <view class="post-card" wx:for="{{lfList}}" wx:key="id" bindtap="onItemClick" data-item="{{item}}">
+                 <view class="card-header">
+                     <view style="display:flex; align-items:center;">
+                        <text class="lf-type {{item.type === 1 ? 'lf-lost' : 'lf-found'}}">{{item.type === 1 ? '寻物' : '招领'}}</text>
+                        <text class="card-title">{{item.itemName}}</text>
+                     </view>
+                     <view style="display:flex; flex-direction:column; align-items:flex-end;">
+                        <view class="status-tag {{item.status === 0 ? 'status-active' : 'status-sold'}}">
+                           {{item.status === 0 ? '发布中' : (item.status === 1 ? '已结案' : '已撤回')}}
+                        </view>
+                        <text class="delete-btn-text" style="margin-top:10rpx" catchtap="deleteItem" data-item="{{item}}">删除</text>
+                     </view>
+                </view>
+                 <view class="card-content">{{item.description || item.features}}</view>
+                 <scroll-view class="card-images-scroll" scroll-x wx:if="{{item.displayImages && item.displayImages.length > 0}}">
+                    <image class="scroll-img" wx:for="{{item.displayImages}}" wx:for-item="img" wx:key="*this" src="{{img}}" mode="aspectFill" catchtap="previewImage" data-urls="{{item.displayImages}}" data-current="{{img}}"></image>
+                </scroll-view>
+                <view class="post-footer">
+                    <text class="card-time">{{item.createTime}} · {{item.location || '未知地点'}}</text>
+                </view>
+            </view>
+            <view class="empty-state" wx:if="{{!loading && lfList.length === 0}}">
+                <image src="/assets/images/curiosity.png" class="empty-icon" mode="aspectFit"></image>
+                <text class="empty-text">暂无发布的失物招领</text>
+            </view>
+        </block>
+        
+        <view class="footer-end" wx:if="{{!loading && ((currentTab===0 && goodsList.length>0) || (currentTab===1 && postList.length>0) || (currentTab===2 && jobList.length>0) || (currentTab===3 && lfList.length>0))}}">
+            <view class="end-line"></view>
+            <text class="end-text">已经到底啦</text>
+            <view class="end-line"></view>
+        </view>
+    </view>
+</view>
