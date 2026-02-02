@@ -1,4 +1,5 @@
 # 青里 - 校园生活服务社区平台
+![logo](https://github.com/user-attachments/assets/3ee50c53-506b-44d7-8a4f-f18dd835ce63)
 
 <div align="center">
 
@@ -178,3 +179,12 @@ npm run dev
 ## 许可证
 
 [MIT License](LICENSE)
+
+## 界面展示
+
+<img width="520" height="980" alt="image" src="https://github.com/user-attachments/assets/50f34040-8c54-4192-bda8-0ea7547fd0db" />
+<img width="520" height="980" alt="image" src="https://github.com/user-attachments/assets/9601a963-22c6-48a5-adfc-cc07b9dfd72b" />
+<img width="519" height="979" alt="image" src="https://github.com/user-attachments/assets/cea60c6f-9865-4d9e-9fd0-b10703f00eb2" />
+<img width="519" height="979" alt="image" src="https://github.com/user-attachments/assets/aae00100-ab89-44d7-933f-69c2b600c6d7" />
+
+
